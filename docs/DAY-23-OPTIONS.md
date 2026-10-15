@@ -15,7 +15,7 @@ The web search cannot read trademark registers (USPTO, IP India, EUIPO), so "saf
 
 **Recommendation: Vaskaro** ("Vaskaro Motorcycles"). Short, sounds Italian-alpine, no clash, far from our earlier brand names. Second choice: Tavorne.
 
-Invented model names (also need the same check in Round 0 step 9): **Passo 650** (tourer), **Colle 450** (scrambler), **Vetta 800** (roadster). Only descriptive words otherwise.
+Model names (checked 2026-10-15, nothing found): **Passo 650** (tourer), **Cima 450** (scrambler; "Colle 450" was dropped, it sounds like Kove's Colove 450), **Vetta 800** (roadster). Only descriptive words otherwise.
 
 ## 2. What is already used (Days 1–22)
 
@@ -41,7 +41,7 @@ Also used earlier and easy to repeat by accident:
 
 All three keep type A (the camera goes forward along the road and pushes toward the bike). Section codes are proposals, checked against the last 3 sites (Days 20–22); the full 8-of-8 table goes into the sites log after approval. Every price is "sample", in ₹.
 
-**Sample price plan (all options):** Passo 650 tourer from ₹ 6.9 lakh · Colle 450 scrambler from ₹ 4.8 lakh · Vetta 800 roadster from ₹ 9.4 lakh · booking token ₹ 10,000 · first service pack ₹ 12,000 · riding jacket ₹ 18,900 · helmet ₹ 14,500 · gloves ₹ 5,900 · tank bag ₹ 7,200 · tyre-change day ₹ 3,500. Each carries the tag "sample".
+**Sample price plan (all options):** Passo 650 tourer from ₹ 6.9 lakh · Cima 450 scrambler from ₹ 4.8 lakh · Vetta 800 roadster from ₹ 9.4 lakh · booking token ₹ 10,000 · first service pack ₹ 12,000 · riding jacket ₹ 18,900 · helmet ₹ 14,500 · gloves ₹ 5,900 · tank bag ₹ 7,200 · tyre-change day ₹ 3,500. Each carries the tag "sample".
 
 ### Option A · "Bronze Dusk" (recommended)
 - **Look**: dark luxury, graphite-green with bronze metal. Palette: ink `#0D0F0E`, surface `#151918`, text `#ECE6DA`, muted `#8E8A80`, bronze `#B07A45` (text-safe bronze `#CF9A63`).
@@ -95,15 +95,15 @@ All three keep type A (the camera goes forward along the road and pushes toward 
 |---|---|---|---|---|
 | 1 | Hero | HR09 | Numeral outlines | Chapter number scales in |
 | 2 | Gear Gate | ours | Gate glows at hovered gear | Lever shifts with scroll |
-| 3 | Models | PS09-style | Card lifts and flips to spec | Cards ride on the gate |
-| 4 | Engine | FT04 | Callout line extends | Lines draw |
-| 5 | Chassis detail | CP-style | Slider peeks | Reveal across |
-| 6 | Gear | PS20 | Swatch swaps | Row stagger |
-| 7 | Rides (events) | EV04 | Date card opens | Dates count down |
+| 3 | Models | PS04 spotlight + buy box | Card lifts and flips to spec | Cards ride on the gate |
+| 4 | Engine | FT15 numbered features flanking a tall image | Callout line extends | Lines draw |
+| 5 | Chassis detail | CP04 compare slider + highlights | Slider peeks | Reveal across |
+| 6 | Gear | PS15 filter sidebar + grid | Swatch swaps | Row stagger |
+| 7 | Rides (events) | EV05 event cards with RSVP | Date card opens | Dates count down |
 | 8 | Book | BK05 | Slot highlight | Steps tick |
 | 9 | Footer | FO05 | Link sweep | Wordmark rises |
 
-Layout codes in B and C that I did not check against SECTION-MENU line by line are marked "-style"; they get confirmed in Round 0 step 6 once you pick.
+**Option C chosen 2026-10-15, codes checked against SECTION-MENU:** NV08, HR09, BK05, FO05 exist and fit. PS20 and FT04 were dropped (Day 20 used them); PS09 is a quiz, so PS04 replaces it. Final C codes: NV08 · HR09 · gate (ours) · PS04 · FT15 · CP04 · PS15 · EV05 · BK05 · FO05. None used by Days 20–22.
 
 ## 4. Clip plan (hero chain, one scene)
 
