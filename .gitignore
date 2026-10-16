@@ -51,8 +51,8 @@ refs/
 .triozen-ref-browser/
 
 # template repo: skip raw media, frame folders and big videos (keep the .gitkeep placeholders)
-raw/*
-!raw/.gitkeep
+# day repo keeps its picked assets in raw/; the untouched originals stay local
+raw/_orig/
 raw-orig/
 public/frames/*
 !public/frames/.gitkeep
