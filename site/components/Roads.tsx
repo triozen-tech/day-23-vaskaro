@@ -12,6 +12,10 @@ export default function Roads() {
     const p = still ? 1 : prog(track.current!);
     const W = 5 * 480 + 80 - 1440 + 120;
     (r.querySelector(".rail") as HTMLElement).style.transform = `translateX(${-W * p}px)`;
+    (r.querySelector("#rprog") as HTMLElement).style.width = `${(still ? 1 : p) * 100}%`;
+    const idx = Math.min(ROADS.length - 1, Math.round(p * (ROADS.length - 1)));
+    (r.querySelector("#ridx") as HTMLElement).textContent = `0${idx + 1} / 0${ROADS.length}`;
+    (r.querySelector("#rname") as HTMLElement).textContent = `${ROADS[idx].name} · ${ROADS[idx].meta}`;
     r.querySelectorAll<HTMLElement>(".rc").forEach((c) => {
       const vis = still ? 1 : clamp((1440 - c.getBoundingClientRect().left) / 700);
       (c.querySelector(".rp") as SVGPathElement).style.strokeDashoffset = String(700 * (1 - vis));
@@ -31,6 +35,11 @@ export default function Roads() {
               <div className="t"><h3>{c.name}</h3><p>{c.meta}</p></div>
             </div>
           ))}
+        </div>
+        <div className="rfoot">
+          <span id="ridx">01 / 05</span>
+          <div className="rbar"><i id="rprog" /></div>
+          <span id="rname">{ROADS[0].name} · {ROADS[0].meta}</span>
         </div>
       </div>
     </section>

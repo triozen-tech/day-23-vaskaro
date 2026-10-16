@@ -105,7 +105,8 @@ html { overflow-x: clip; }
 .vk-book { background: #101316; padding: 100px 80px; }
 .vk-book h2 { font: 400 72px/1 'Gilda Display'; width: 520px; margin-top: 20px; }
 .vk-book .lead { margin-top: 26px; font-size: 13px; line-height: 1.7; color: #EDE7DBaa; width: 400px; }
-.vk-book .form { position: absolute; right: 80px; top: 100px; width: 640px; background: #1A1F24; border: 1px solid rgba(237,231,219,.16); padding: 36px; }
+.vk-book .intro { position: absolute; left: 80px; top: 50%; transform: translateY(-50%); }
+.vk-book .form { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 640px; background: #1A1F24; border: 1px solid rgba(237,231,219,.16); padding: 36px; }
 .vk-book .row { display: flex; gap: 10px; margin: 14px 0; }
 .slot { flex: 1; border: 1px solid rgba(237,231,219,.16); padding: 14px 0; text-align: center; font-size: 12px; letter-spacing: .1em; transition: .3s; cursor: pointer; background: none; color: inherit; }
 .slot.on { background: #B8854A; color: #101316; border-color: #B8854A; }
@@ -117,7 +118,7 @@ html { overflow-x: clip; }
 
 /* FOOTER */
 #foot { background: #B8854A; color: #101316; height: 900px; position: relative; overflow: hidden; }
-#foot .word { position: absolute; left: -10px; bottom: 30px; font: 400 262px/1 'Gilda Display'; letter-spacing: -.02em; white-space: nowrap; }
+#foot .word { position: absolute; left: 64px; bottom: 30px; font: 400 262px/1 'Gilda Display'; letter-spacing: -.02em; white-space: nowrap; }
 #foot .word span { display: inline-block; }
 #foot .cols { position: absolute; left: 70px; top: 130px; display: flex; gap: 90px; font-size: 12px; line-height: 2; letter-spacing: .1em; }
 #foot .cols b { display: block; font: 700 10px 'Chivo Variable'; letter-spacing: .24em; margin-bottom: 10px; }
@@ -128,3 +129,10 @@ html { overflow-x: clip; }
 .vk-nav .r a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: #B8854A; transform: scaleX(0); transform-origin: left; transition: transform .4s; }
 .vk-nav .r a:hover::after { transform: scaleX(1); }
 .vk-nav .r a:hover { color: #B8854A; }
+
+.engwrap { position: absolute; inset: 0; will-change: transform; }
+
+.vk-roads .rfoot { position: absolute; left: 80px; right: 80px; top: 790px; display: flex; align-items: center; gap: 28px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #EDE7DBcc; }
+.vk-roads .rbar { flex: 1; height: 2px; background: rgba(237,231,219,.16); position: relative; }
+.vk-roads .rbar i { position: absolute; left: 0; top: 0; height: 2px; background: #B8854A; width: 0; }
+.vk-roads .rfoot #rname { min-width: 300px; text-align: right; color: #B8854A; }

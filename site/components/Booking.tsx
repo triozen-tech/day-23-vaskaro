@@ -25,9 +25,11 @@ export default function Booking() {
   return (
     <section className="track" id="book" ref={track} style={{ height: 2000 }}>
       <div className="pin vk-book" ref={root}>
-        <div className="eyebrow">Test-ride booking</div>
-        <h2>Ride it up the pass.</h2>
-        <p className="lead">Pick a model, a day and a slot. Token ₹ 10,000 (sample), fully refundable.</p>
+        <div className="intro">
+          <div className="eyebrow">Test-ride booking</div>
+          <h2>Ride it up the pass.</h2>
+          <p className="lead">Pick a model, a day and a slot. Token ₹ 10,000 (sample), fully refundable.</p>
+        </div>
         <div className="form">
           {ROWS.map((row, k) => (
             <div key={k}>

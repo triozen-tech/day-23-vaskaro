@@ -5,8 +5,9 @@ import type { Seg } from "@/lib/chain";
 import { HERO_CLIPS } from "../content";
 import { sm } from "./kit";
 
-// Plain joins: the clips are near-identical at each cut, so a half-frame fade is a straight swap.
-const SEGS: Seg[] = HERO_CLIPS.map((clip) => ({ clip, fade: 0.5 }));
+// Joins (units = frames at 24 fps): V1>V2 and V2>V3 get a 0.3 s crossfade (7 units); V3>V4 is near-identical, so a plain swap.
+const FADES = [0.5, 7, 7, 0.5];
+const SEGS: Seg[] = HERO_CLIPS.map((clip, i) => ({ clip, fade: FADES[i] }));
 const ARC = "M1180 290 A300 300 0 0 1 1180 790";
 
 /** Hero: the V1..V4 chain scrubbed by scroll, with the layout's text, arc and handle driven by the same progress. */

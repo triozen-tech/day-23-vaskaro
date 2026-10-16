@@ -18,13 +18,20 @@ export const GEARS = [
   "Sixth gear: the summit.",
 ];
 
+// Callouts sit on the Passo cut-out wrapper (img left 284, top 246, width 1055); each line ends on its part:
+// c1 engine · c2 exhaust · c3 rear wheel · c4 tank. Labels stay clear of the bike body.
 export const SPECS = [
-  { id: "c1", n: 649, label: "cc parallel twin", left: 890, top: 610 },
-  { id: "c2", n: 72, label: "hp at 8,500 rpm", left: 1290, top: 300 },
-  { id: "c3", n: 186, label: "kg ready to ride", left: 110, top: 670 },
-  { id: "c4", n: 6, label: "gears, slipper clutch", left: 1250, top: 570 },
+  { id: "c1", n: 649, label: "cc parallel twin", left: 930, top: 772, part: "Engine" },
+  { id: "c2", n: 72, label: "hp at 8,500 rpm", left: 340, top: 772, part: "Exhaust" },
+  { id: "c3", n: 186, label: "kg ready to ride", left: 110, top: 635, part: "Rear wheel" },
+  { id: "c4", n: 6, label: "gears, slipper clutch", left: 1050, top: 272, part: "Tank" },
 ];
-export const SPEC_LINES = ["M700 520 L700 640 L880 640", "M950 450 L1100 340 L1280 340", "M560 560 L420 700 L260 700", "M1110 520 L1200 600 L1340 600"];
+export const SPEC_LINES = [
+  { d: "M850 575 L850 800 L920 800", dot: [850, 575] },
+  { d: "M640 650 L640 800 L500 800", dot: [640, 650] },
+  { d: "M540 665 L300 665", dot: [540, 665] },
+  { d: "M840 430 L840 300 L1040 300", dot: [840, 430] },
+];
 
 export const SHOP = [
   { img: "g1", name: "Switchback Jacket", price: "₹ 18,900", chips: ["#1A1F24", "#B8854A", "#8a8f8a"] },
