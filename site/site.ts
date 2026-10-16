@@ -1,26 +1,24 @@
 import type { SiteMeta, Theme } from "@/lib/site";
 
-// Placeholder: a new day starts here. Round 0 writes site/DESIGN.md, Round 1 rewrites this file for the brand.
-
 export const meta: SiteMeta = {
-  name: "Showreel Kit",
-  title: "Showreel Kit — new site",
-  description: "Blank starting point for today's showcase site.",
-  loaderText: "Kit",
+  name: "Vaskaro",
+  title: "Vaskaro — Mountain roads on a scroll wheel",
+  description: "Vaskaro: three mountain motorcycles, gear and test rides. Concept website by Triozen Tech.",
+  loaderText: "VASKARO",
   loader: true,
-  cursor: true,
-  record: { duration: 30 },
+  cursor: false,
+  record: { duration: 38 },
 };
 
 export const theme: Theme = {
-  bg: "#0e0e0f",
-  surface: "#18181a",
-  text: "#f2f2f0",
-  muted: "#9a9a96",
-  accent: "#f2f2f0",
-  accentText: "#0e0e0f",
-  line: "#2a2a2c",
-  fontDisplay: "system-ui, sans-serif",
-  fontBody: "system-ui, sans-serif",
+  bg: "#101316",
+  surface: "#1A1F24",
+  text: "#EDE7DB",
+  muted: "#b4afa5",
+  accent: "#B8854A",
+  accentText: "#101316",
+  line: "rgba(237,231,219,.16)",
+  fontDisplay: "'Gilda Display', serif",
+  fontBody: "'Chivo Variable', system-ui, sans-serif",
   radius: 0,
 };

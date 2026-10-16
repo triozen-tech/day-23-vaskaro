@@ -1,9 +1,52 @@
-# DESIGN.md
+# DESIGN.md — Vaskaro (Day 23)
 
 **Mode: Pro**
 
-Round 0 of `/new-site` writes today's design direction, section plan, Motion map and asset plan here.
-Claude Code never writes Flow/Veo prompts (see "Prompts (as run)" below).
+Fictional motorcycle brand. Hook: "Mountain roads on a scroll wheel." Layout C "Six Gears, Six Chapters" is fixed. Desktop 1440×900 only. Fonts Gilda Display + Chivo. Palette: slate #1A1F24, deep #101316, paper #EDE7DB, bronze #B8854A. Footer: "Concept website by Triozen Tech". All prices are samples. Uniqueness table: see docs/SITES-LOG.md.
+
+## Section plan and layout codes (Round 1 built)
+
+The approved layout is custom (from the hero.mov and models.mov references plus our own sections), so most sections have no exact menu match. The provisional codes are replaced by what was really built. "closest" is the nearest SECTION-MENU entry, for the sites log only.
+
+| # | Section | Layout code (real) | Closest menu code | Motion code (planned) |
+|---|---|---|---|---|
+| 1 | Nav | ours: bar + tagline + burger, turns dark over paper | NV08 (not a box grid) | M34 link underline |
+| 2 | Hero | ours: cloth unveil, V1>V2>V3>V4 chain, drag handle on arc | HR09 (not a chapter opener) | scroll-scrubbed chain (M-video) |
+| 3 | Models | ours: scroll-picked 3-model slider | PS04 (no buy box) | M3 |
+| 4 | Gate (signature) | ours: six-gear dial | none | M20 |
+| 5 | Engine | ours: callout lines + counters | FT15 (callouts, not numbered flank) | M23 |
+| 6 | Gear shop | ours: 4 cards on paper, no filter | PS15 (no sidebar) | M34 |
+| 7 | Roads | ours: pinned horizontal rail | none | M18 |
+| 8 | Booking | ours: 3-step click picker | BK05 | M34 |
+| 9 | Footer | ours: giant wordmark rising by letter | FO05 | M20 |
+
+Motion codes are provisional; Rounds 2 and 3 confirm them against MOTION-MENU (no code twice).
+
+## Hover map
+
+| Element | Hover | data-hover-demo |
+|---|---|---|
+| Nav "Book a ride" | bronze underline draws | yes |
+| Gear card 1 and 3 | tilt, image zoom, ADD TO CART slides up | yes (x2) |
+| Booking slot (Cima 450) | fills bronze | click |
+
+## Product detail plan
+
+Gear card: image zoom + quick add. Models: chips, arrows, scroll step. Booking: click choices, confirm wakes.
+
+## Reel time table (target 38 s)
+
+Loader 2 · hero 9 · models 6 · gate 6 · engine 4 · gear 3 · roads 4 · booking 3 · footer 1.
+
+## Assets
+
+| ID | What | Source | File |
+|---|---|---|---|
+| K1–K5 | hero keyframes | Flow | public/images/vaskaro/k1–k5.jpg |
+| V1–V4 | hero clips (frames 96/96/192/192) | Veo | raw/v*.mp4, public/frames/vaskaro-v* |
+| Passo, Cima, Vetta | model cut-outs | from stills (npm run cutout) | m-*.png |
+| g1–g4 | gear stills | Flow | g*.jpg |
+| r1–r5 | road stills | Flow | r*.jpg |
 
 ## Clip table (video-first sites)
 
