@@ -136,3 +136,33 @@ html { overflow-x: clip; }
 .vk-roads .rbar { flex: 1; height: 2px; background: rgba(237,231,219,.16); position: relative; }
 .vk-roads .rbar i { position: absolute; left: 0; top: 0; height: 2px; background: #B8854A; width: 0; }
 .vk-roads .rfoot #rname { min-width: 300px; text-align: right; color: #B8854A; }
+
+/* LOADER (I19 variant) */
+.vk-ld { position: fixed; inset: 0; z-index: 300; background: #101316; display: flex; flex-direction: column; align-items: center; justify-content: center; will-change: transform; }
+.vk-ld-word { font: 400 64px 'Gilda Display'; color: #EDE7DB; padding-left: .34em; letter-spacing: .34em; animation: vkbreath .95s cubic-bezier(.4,0,.2,1) both, vkcreep 2.4s linear .95s forwards; }
+@keyframes vkcreep { from { letter-spacing: .34em; } to { letter-spacing: .42em; } }
+@keyframes vkbreath { 0% { letter-spacing: .02em; opacity: 0; } 58% { letter-spacing: .62em; opacity: 1; } 100% { letter-spacing: .34em; opacity: 1; } }
+.vk-ld-line { width: 220px; height: 1px; background: rgba(237,231,219,.16); margin-top: 34px; }
+.vk-ld-line i { display: block; height: 1px; background: #B8854A; transform-origin: left; transform: scaleX(0); }
+
+/* HERO hook line (typed in when the loader opens) */
+.hook { position: absolute; left: 140px; top: 352px; text-shadow: 0 2px 16px #000c; font: italic 400 26px 'Gilda Display'; color: #EDE7DB; letter-spacing: .01em; white-space: nowrap; }
+.hook i { display: inline-block; width: 2px; height: 24px; background: #B8854A; margin-left: 4px; vertical-align: -3px; animation: vkcaret 1s steps(1) infinite; }
+@keyframes vkcaret { 50% { opacity: 0; } }
+
+/* ambient life (nothing is ever frozen) */
+#gear .ph img { animation: vkdrift 2.2s linear infinite alternate; }
+@keyframes vkdrift { from { transform: scale(1); } to { transform: scale(1.16) translate(-14px, -9px); } }
+.vk-book .form { animation: vkglow 1.6s linear infinite; overflow: hidden; }
+.vk-book .form::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 40%, rgba(184,133,74,.3) 50%, transparent 60%); background-size: 250% 100%; animation: vksheen 3.4s linear infinite; }
+@keyframes vkglow { 0%, 100% { box-shadow: 0 0 0 rgba(184,133,74,0); border-color: rgba(237,231,219,.16); } 50% { box-shadow: 0 0 60px rgba(184,133,74,.5); border-color: rgba(184,133,74,.55); } }
+#foot::after { content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light; background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.55) 50%, transparent 62%); background-size: 260% 100%; animation: vksheen 5s linear infinite; }
+@keyframes vksheen { from { background-position: 130% 0; } to { background-position: -130% 0; } }
+.vk-gate .road path:nth-of-type(2) { stroke-dasharray: 6 14; animation: vkflow 1.4s linear infinite; }
+@keyframes vkflow { to { stroke-dashoffset: -20; } }
+.vk-hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; background: radial-gradient(ellipse 520px 380px at 62% 62%, rgba(184,133,74,.30), transparent 70%); animation: vkbloom 3s linear infinite; }
+@keyframes vkbloom { 0%, 100% { opacity: .05; } 50% { opacity: .85; } }
+.vk-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 700px 300px at 30% 85%, rgba(237,231,219,.10), transparent 70%); animation: vkbloom 2.1s linear infinite reverse; }
+#foot::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: rgba(255,255,255,.18); animation: vkbloom 1.7s linear infinite; }
+.vk-ld::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 600px 320px at 50% 50%, rgba(184,133,74,.5), transparent 70%); animation: vkldglow 1.2s linear both; }
+@keyframes vkldglow { from { opacity: 0; } to { opacity: 1; } }

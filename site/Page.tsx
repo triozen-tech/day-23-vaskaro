@@ -1,3 +1,4 @@
+import Loader from "./components/Loader";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Models from "./components/Models";
@@ -11,6 +12,7 @@ import Footer from "./components/Footer";
 export default function Page() {
   return (
     <main>
+      <Loader />
       <Nav />
       <Hero />
       <Models />

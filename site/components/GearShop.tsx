@@ -26,7 +26,7 @@ export default function GearShop() {
   };
   const leave = (i: number, e: React.MouseEvent<HTMLDivElement>) => { tilt.current[i] = false; e.currentTarget.style.boxShadow = ""; };
   return (
-    <section id="gear" ref={root}>
+    <section id="gear" data-record-time="3.5" data-record-hold="1.6" ref={root}>
       <div className="eyebrow">Gear shop · all prices sample</div>
       <h2>Dress for the pass.</h2>
       <div className="grid">

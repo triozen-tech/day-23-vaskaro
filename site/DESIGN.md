@@ -67,3 +67,12 @@ Clips play one after another along the page scroll (`lib/chain.ts`, `components/
 ## Prompts (as run)
 
 Empty. When the user pastes back the prompts that were run: asset ID · date · prompt (word for word) · attachments.
+
+## Round 2 motion map (as built)
+| Section | Layout | Motion | How it plays |
+|---|---|---|---|
+| Loader | — | I19 variant (breath + one-piece lift) | wordmark breathes, bronze glow, hairline fills, plate lifts |
+| Hero | HR | M21 hook type-in + M8 arc draw + M27 scrub (V1>V2>V3>V4) | opens on the loader-open event; handle follows scroll |
+| Gate | GL | M30 dial | one gear per step, bike marker moves along the road line |
+| Models | — | M27 pin, scroll picks model | pin and release |
+| Roads | — | M11 horizontal rail | rail on a pin, counter 01–05 |

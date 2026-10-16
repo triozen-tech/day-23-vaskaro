@@ -65,7 +65,7 @@ export default function Models() {
   });
 
   return (
-    <section className="track" id="models" ref={track} style={{ height: 2700 }}>
+    <section className="track" id="models" data-record-time="6.5" ref={track} style={{ height: 2700 }}>
       <div className="pin vk-models" ref={root} style={{ ["--c" as string]: MODELS[0].c }}>
         <div className="big" id="mbig">PASSO</div>
         <div className="bars"><i style={{ height: 300 }} /><i className="bar2" style={{ height: 390 }} /><i style={{ height: 300 }} /></div>

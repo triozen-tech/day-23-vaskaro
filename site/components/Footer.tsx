@@ -15,7 +15,7 @@ export default function Footer() {
     });
   });
   return (
-    <footer id="foot" ref={root}>
+    <footer id="foot" data-record-time="2.8" data-record-hold="0.8" ref={root}>
       <div className="cols">
         <div><b>RIDE</b>Models<br />Test ride<br />Rides</div>
         <div><b>SHOP</b>Gear<br />Service pack ₹ 12,000<br />Tyre-change day ₹ 3,500</div>

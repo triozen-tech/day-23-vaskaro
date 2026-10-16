@@ -23,7 +23,7 @@ export default function Booking() {
   const ok = pick.every((v) => v !== null);
   const first = pick.findIndex((v) => v === null);
   return (
-    <section className="track" id="book" ref={track} style={{ height: 2000 }}>
+    <section className="track" id="book" data-record-time="4.2" data-record-hold="1" ref={track} style={{ height: 2000 }}>
       <div className="pin vk-book" ref={root}>
         <div className="intro">
           <div className="eyebrow">Test-ride booking</div>

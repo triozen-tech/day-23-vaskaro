@@ -23,7 +23,7 @@ export default function Roads() {
     });
   });
   return (
-    <section className="track" id="roads" ref={track} style={{ height: 2600 }}>
+    <section className="track" id="roads" data-record-time="1.5" ref={track} style={{ height: 2600 }}>
       <div className="pin vk-roads" ref={root}>
         <h2>Five roads worth the climb.</h2>
         <div className="rail">

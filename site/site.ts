@@ -5,9 +5,9 @@ export const meta: SiteMeta = {
   title: "Vaskaro — Mountain roads on a scroll wheel",
   description: "Vaskaro: three mountain motorcycles, gear and test rides. Concept website by Triozen Tech.",
   loaderText: "VASKARO",
-  loader: true,
+  loader: false, // the site brings its own loader (site/components/Loader.tsx)
   cursor: false,
-  record: { duration: 38 },
+  record: { duration: 36 },
 };
 
 export const theme: Theme = {
