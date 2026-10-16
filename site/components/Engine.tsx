@@ -39,7 +39,7 @@ export default function Engine() {
         <div className="serif" style={{ position: "absolute", left: 80, top: 170, fontSize: 64, lineHeight: 1, width: 480 }}>649 cc of patient torque.</div>
         <div id="engwrap" className="engwrap">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`${IMG}/m-passo.png`} alt="Passo 650, side view" style={{ position: "absolute", left: 284, top: 246, width: 1055 }} />
+          <img loading="lazy" decoding="async" src={`${IMG}/m-passo.webp`} alt="Passo 650, side view" style={{ position: "absolute", left: 284, top: 246, width: 1055 }} />
           <svg viewBox="0 0 1440 900" style={{ position: "absolute", inset: 0 }}>
             <g fill="none" stroke="#B8854A" strokeWidth="1.5" strokeDasharray="400" id="lines">
               {SPEC_LINES.map((l) => <path key={l.d} d={l.d} style={{ strokeDashoffset: 400 }} />)}

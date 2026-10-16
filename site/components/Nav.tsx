@@ -25,7 +25,7 @@ export default function Nav() {
       <div className="r">
         {[["#models", "Models"], ["#gear", "Gear"], ["#roads", "Rides"]].map(([h, t]) => <a key={h} href={h} className="sw"><span data-t={t}>{t}</span></a>)}
         <Magnetic strength={0.3}><a href="#book" className="cta" data-hover-demo>Book a ride</a></Magnetic>
-        <div className="burger" />
+        <div className="burger" aria-hidden="true" />
       </div>
     </nav>
   );

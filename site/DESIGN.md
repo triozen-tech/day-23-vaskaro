@@ -24,11 +24,7 @@ Motion codes are provisional; Rounds 2 and 3 confirm them against MOTION-MENU (n
 
 ## Hover map
 
-| Element | Hover | data-hover-demo |
-|---|---|---|
-| Nav "Book a ride" | bronze underline draws | yes |
-| Gear card 1 and 3 | tilt, image zoom, ADD TO CART slides up | yes (x2) |
-| Booking slot (Cima 450) | fills bronze | click |
+Final version: see **Round 5 · Final maps** at the end of this file (Round 4 table kept above it for history).
 
 ## Product detail plan
 
@@ -36,7 +32,7 @@ Gear card: image zoom + quick add. Models: chips, arrows, scroll step. Booking: 
 
 ## Reel time table (target 38 s)
 
-Loader 2 · hero 9 · models 6 · gate 6 · engine 4 · gear 3 · roads 4 · booking 3 · footer 1.
+Loader 1.2 · hero 9 · models 6 · gate 6 · engine 4 · gear 3 · roads 4 · booking 3 · footer 1.
 
 ## Assets
 
@@ -63,10 +59,6 @@ Clips play one after another along the page scroll (`lib/chain.ts`, `components/
 |---|---|---|---|---|---|
 | K1 | | 16:9 | `raw/k1.png` | – | |
 | V1 | | 16:9 | `raw/v1.mp4` | K1 + K2 | |
-
-## Prompts (as run)
-
-Empty. When the user pastes back the prompts that were run: asset ID · date · prompt (word for word) · attachments.
 
 ## Round 2 motion map (as built)
 | Section | Layout | Motion | How it plays |
@@ -102,4 +94,41 @@ Empty. When the user pastes back the prompts that were run: asset ID · date · 
 | Road cards | second light line redraws over the road, un-draws on leave; photo drifts | custom |
 | Booking | slots fill from below, confirm arrow slides, magnetic; sheen + next-step ring breathe | custom |
 | Footer | real links, shift right + underline | M290-style |
-Focus rings: bronze 2px outline on every link, button, road and gear card. Hover demos in the reel: Book a ride, 2 gear cards, Tea Terrace Run, booking slot (click).
+Focus rings: bronze 3px outline on every link, button, road and gear card. Hover demos in the reel: Book a ride, 2 gear cards, Tea Terrace Run, booking slot (click).
+
+## Round 5 · Final maps (as shipped)
+
+### Final hover map
+| Item | Hover / focus | Record demo |
+|---|---|---|
+| Cursor (VCursor; mouse only, off in ?static and ?record) | dot + ring; states link · chip · arrow (PREV/NEXT) · view · ride · pick · locked (PICK 3) · go; refreshes when the page scrolls under a resting mouse | — |
+| Nav links | text rolls to a bronze copy, underline draws | — |
+| Book a ride | fills bronze, magnetic, idle glow | `data-hover-demo` |
+| Model chips / arrows / See-details card | chip grows with ring, arrows nudge, card lifts; active chip breathes | — |
+| Gear cards | tilt + lift, second crop, colour dots pop in turn, ADD TO CART slides up | `data-hover-demo` ×2 (Switchback Jacket, Pass Gloves) |
+| Road cards | second light line redraws, un-draws on leave; photo drifts | `data-hover-demo` (Tea Terrace Run) |
+| Booking slots / confirm | slots fill from below, confirm arrow slides, magnetic; sheen and next-step ring breathe | `data-hover-demo="click"` (CIMA 450) |
+| Footer links | shift right + underline | — |
+| Keyboard focus | 3px bronze ring (ink on the paper gear section) on links, buttons, gear cards, road cards, slots, confirm (locked confirm uses `aria-disabled`, so it is reachable) | — |
+
+### Final motion map
+| Section | Layout | Motion | Transition out |
+|---|---|---|---|
+| Loader | — | **I-VK1 Headlight** (custom): dot, beam sweep lights the wordmark, flood opens onto the hero, ~1.15 s | — |
+| Hero | HR | M21 hook type-in + M8 arc draw + M27 scrub (V1>V2>V3>V4) | — |
+| Models | — | M27 pin, scroll picks Passo / Cima / Vetta | — |
+| Gate | GL | M30 dial, bike marker rides the road line | X17 lock-on reticle |
+| Engine | — | M8 callout lines + count-up + drift | X1 overlap slide |
+| Gear shop | — | stagger rise | X3 ridge edge morph |
+| Roads | — | M11 horizontal rail + line draw | X7 diagonal wipe |
+| Booking | BK05 | steps tick with scroll, live confirm | X16 cut-and-stamp |
+| Footer | FO05 | wordmark rise + idle stripes | — |
+
+### Round 5 polish and performance
+- Text 14px minimum everywhere (eyebrows, SAMPLE tags, footer headings, cursor labels, ADD TO CART, confirm). Gear eyebrow darkened to pass 4.5:1 on paper; inactive booking steps and the locked confirm raised above 4.5:1.
+- Below-the-fold photos converted to sized WebP (11.9 MB to 1.2 MB) and lazy-loaded; frame sets load one clip at a time (v1 first, next at 50 %, far ones dropped).
+- Decorative burger icon marked `aria-hidden`.
+
+## Prompts (as run)
+
+Left empty for the user to paste into. Format: asset ID · date · prompt (word for word) · attachments.

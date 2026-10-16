@@ -73,7 +73,7 @@ export default function Models() {
         <div className="ring" id="mring"><b id="mdot" /></div>
         {MODELS.map((m, i) => (
           // eslint-disable-next-line @next/next/no-img-element
-          <img key={m.img} className={"mb bike" + (i === 0 ? " on" : "")} src={`${IMG}/${m.img}.png`} alt={m.f} />
+          <img loading="lazy" decoding="async" key={m.img} className={"mb bike" + (i === 0 ? " on" : "")} src={`${IMG}/${m.img}.webp`} alt={m.f} />
         ))}
         <div className="sm"><h3 id="mname">{MODELS[0].f}</h3><p id="mtxt">{MODELS[0].t}</p><div className="price" id="mprice">{MODELS[0].p} <small>SAMPLE</small></div></div>
         <div className="chips" id="mchips">

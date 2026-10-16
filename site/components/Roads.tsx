@@ -34,7 +34,7 @@ export default function Roads() {
           {ROADS.map((c) => (
             <div key={c.name} className="rc" data-vc="ride" tabIndex={0} data-hover-demo={c.name === "Tea Terrace Run" ? "" : undefined}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`${IMG}/${c.img}.jpg`} alt={c.name} />
+              <img loading="lazy" decoding="async" src={`${IMG}/${c.img}.webp`} alt={c.name} />
               <svg viewBox="0 0 440 520"><path className="rp" d={c.d} fill="none" stroke="#B8854A" strokeWidth="3" strokeDasharray="700" strokeDashoffset="700" /><path className="rp2" d={c.d} fill="none" strokeWidth="4" strokeLinecap="round" /></svg>
               <div className="t"><h3>{c.name}</h3><p>{c.meta}</p></div>
             </div>

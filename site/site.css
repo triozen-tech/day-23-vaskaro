@@ -3,7 +3,7 @@ html { overflow-x: clip; }
 .serif { font-family: var(--font-display, 'Gilda Display', serif); }
 .track { position: relative; }
 .pin { height: 900px; position: sticky; top: 0; overflow: hidden; }
-.eyebrow { font: 700 11px/1 'Chivo Variable', sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #B8854A; }
+.eyebrow { font: 700 14px/1 'Chivo Variable', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #B8854A; }
 
 /* NAV */
 .vk-nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; border-bottom: 1px solid rgba(237,231,219,.16); backdrop-filter: blur(6px); background: linear-gradient(#101316cc, #10131600); transition: color .3s, background .3s, border-color .3s; }
@@ -46,7 +46,7 @@ html { overflow-x: clip; }
 .vk-models .sm h3 { font: 900 20px 'Chivo Variable'; letter-spacing: .12em; text-transform: uppercase; }
 .vk-models .sm p { font-size: 14px; line-height: 1.7; color: #EDE7DBaa; margin-top: 12px; }
 .vk-models .sm .price { margin-top: 16px; font: 400 24px 'Gilda Display'; color: #B8854A; }
-.vk-models .sm .price small { font: 700 9px 'Chivo Variable'; letter-spacing: .14em; color: #EDE7DBaa; }
+.vk-models .sm .price small { font: 700 14px 'Chivo Variable'; letter-spacing: .1em; color: #EDE7DBcc; }
 .vk-models .chips { position: absolute; right: 40px; top: 90px; display: flex; gap: 8px; }
 .vk-models .chips button, .vk-models .arrows button { cursor: pointer; padding: 0; }
 .vk-models .chips button { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(237,231,219,.16); background: #ffffff10; display: block; transition: .4s; }
@@ -84,8 +84,8 @@ html { overflow-x: clip; }
 .pc .in { padding: 16px; }
 .pc h4 { font: 700 14px 'Chivo Variable'; letter-spacing: .06em; }
 .pc .pr { font: 400 22px 'Gilda Display'; margin-top: 6px; }
-.pc .pr small { font: 700 9px 'Chivo Variable'; letter-spacing: .14em; color: #1a1f2488; margin-left: 6px; }
-.pc .add { position: absolute; left: 16px; right: 16px; bottom: -60px; background: #1A1F24; color: #EDE7DB; text-align: center; padding: 13px; font: 700 10px 'Chivo Variable'; letter-spacing: .2em; transition: bottom .4s; }
+.pc .pr small { font: 700 14px 'Chivo Variable'; letter-spacing: .1em; color: #4d535a; margin-left: 6px; }
+.pc .add { position: absolute; left: 16px; right: 16px; bottom: -60px; background: #1A1F24; color: #EDE7DB; text-align: center; padding: 13px; font: 700 14px 'Chivo Variable'; letter-spacing: .2em; transition: bottom .4s; }
 .pc:hover .add { bottom: 16px; }
 .chip { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; border: 1px solid #0003; }
 
@@ -110,18 +110,18 @@ html { overflow-x: clip; }
 .vk-book .row { display: flex; gap: 10px; margin: 14px 0; }
 .slot { flex: 1; border: 1px solid rgba(237,231,219,.16); padding: 14px 0; text-align: center; font-size: 14px; letter-spacing: .1em; transition: .3s; cursor: pointer; background: none; color: inherit; }
 .slot.on { background: #B8854A; color: #101316; border-color: #B8854A; }
-.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; opacity: .4; transition: .4s; }
+.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; opacity: .72; transition: .4s; }
 .step.on { opacity: 1; }
 .step i { width: 20px; height: 20px; border: 1.5px solid #B8854A; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 14px; color: #101316; transition: .3s; }
 .step.on i { background: #B8854A; }
-.vk-book .btn { display: inline-block; margin-top: 20px; background: #EDE7DB; color: #101316; padding: 16px 32px; font: 700 11px 'Chivo Variable'; letter-spacing: .22em; border: 0; transition: .3s; }
+.vk-book .btn { display: inline-block; margin-top: 20px; background: #EDE7DB; color: #101316; padding: 16px 32px; font: 700 14px 'Chivo Variable'; letter-spacing: .22em; border: 0; transition: .3s; }
 
 /* FOOTER */
 #foot { background: #B8854A; color: #101316; height: 900px; position: relative; overflow: hidden; }
 #foot .word { position: absolute; left: 64px; bottom: 30px; font: 400 262px/1 'Gilda Display'; letter-spacing: -.02em; white-space: nowrap; }
 #foot .word span { display: inline-block; }
 #foot .cols { position: absolute; left: 70px; top: 130px; display: flex; gap: 90px; font-size: 14px; line-height: 2; letter-spacing: .1em; }
-#foot .cols b { display: block; font: 700 10px 'Chivo Variable'; letter-spacing: .24em; margin-bottom: 10px; }
+#foot .cols b { display: block; font: 700 14px 'Chivo Variable'; letter-spacing: .2em; margin-bottom: 10px; }
 #foot .note { position: absolute; right: 70px; top: 130px; font-size: 14px; letter-spacing: .14em; text-align: right; line-height: 1.8; }
 
 /* NAV link hover */
@@ -199,7 +199,7 @@ html { overflow-x: clip; }
 .vcur.on { opacity: 1; }
 .vcur .d { position: absolute; left: 0; top: 0; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: #B8854A; transform: translate(var(--x, -100px), var(--y, -100px)); transition: opacity .25s, background .25s; mix-blend-mode: normal; }
 .vcur .r { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid #B8854A; display: grid; place-items: center; transform: translate(var(--rx, -100px), var(--ry, -100px)); transition: width .35s cubic-bezier(.2,.7,.1,1), height .35s cubic-bezier(.2,.7,.1,1), margin .35s cubic-bezier(.2,.7,.1,1), background .3s, border-color .3s, border-radius .3s; }
-.vcur .r b { font: 700 11px 'Chivo Variable'; letter-spacing: .18em; color: #101316; opacity: 0; transition: opacity .25s; white-space: nowrap; }
+.vcur .r b { font: 700 14px 'Chivo Variable'; letter-spacing: .08em; color: #101316; opacity: 0; transition: opacity .25s; white-space: nowrap; }
 .vcur[data-s="link"] .r { width: 54px; height: 54px; margin: -27px 0 0 -27px; background: #B8854A22; }
 .vcur[data-s="chip"] .r { width: 18px; height: 18px; margin: -9px 0 0 -9px; background: #B8854A; }
 .vcur[data-s="arrow"] .r { width: 58px; height: 58px; margin: -29px 0 0 -29px; background: #B8854A; }
@@ -277,7 +277,7 @@ a:focus-visible, button:focus-visible, .rc:focus-visible, .pc:focus-visible { ou
 .vk-book .btn.live:hover { background: #B8854A; letter-spacing: .26em; }
 .vk-book .btn.live:hover .arr { transform: translateX(6px); }
 .vk-book .btn { font-size: 14px; cursor: pointer; transition: background .3s, letter-spacing .4s, opacity .3s; }
-.vk-book .btn[aria-disabled="true"] { cursor: not-allowed; opacity: .55; }
+.vk-book .btn[aria-disabled="true"] { cursor: not-allowed; opacity: .8; }
 
 /* footer links */
 #foot .cols a { display: block; position: relative; width: max-content; transition: transform .35s cubic-bezier(.2,.7,.1,1); }
@@ -298,3 +298,6 @@ html.is-static .vk-nav .r a.cta, html.is-static .vk-models .chips button.on, htm
 .vk-book .form::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(237,231,219,.10) 50%, transparent 60%); background-size: 250% 100%; animation: vksheen 3.2s linear infinite; }
 .step:not(.on) i { animation: vkglow 2s ease-in-out infinite; }
 html.is-static .vk-book .form::after, html.is-static .step i { animation: none !important; }
+
+/* ROUND 5 · contrast on the paper gear section */
+#gear .eyebrow { color: #7F5724; }

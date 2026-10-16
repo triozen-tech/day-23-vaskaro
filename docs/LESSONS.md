@@ -195,6 +195,10 @@ Short rules learned the hard way on Days 1–7. `/new-site` and every round star
 158. **Cards must match what is on screen**: time every card window against the actual frames (use the `CARD` table), not the planned clip length.
 159. **Price cards need a hold**: a still between V11 and V12 (~6% of the scroll) gives the cards time to be read.
 160. **The cover badge is part of the locked spec** (empty black box for Instagram's view count); if a cover must have no empty box, paint it out after `npm run cover`, don't edit the script.
-152. **Never clean temp shots with a wildcard** (`r[0-9_]*.png` also matched `r4-hover-*` and earlier rounds' sheets): delete temp files by exact name or keep them in a temp folder (Day 23).
-153. **A loader that is dark and slow-moving fails freezedetect** (0.4 s of near-black reads as frozen): keep the beam and its dot pulsing, and let the sweep run right up to the flood (Day 23).
-154. **Use `aria-disabled`, not `disabled`, on a locked confirm button** so keyboard users can reach it and the focus ring shows (Day 23).
+161. **Never clean temp shots with a wildcard** (`r[0-9_]*.png` also matched `r4-hover-*` and earlier rounds' sheets): delete temp files by exact name or keep them in a temp folder (Day 23).
+162. **A loader that is dark and slow-moving fails freezedetect** (0.4 s of near-black reads as frozen): keep the beam and its dot pulsing, and let the sweep run right up to the flood (Day 23).
+163. **Use `aria-disabled`, not `disabled`, on a locked confirm button** so keyboard users can reach it and the focus ring shows (Day 23).
+164. **Photos below the fold are the real first-load weight, not the frames** (Day 23: 11.9 MB of PNG/JPG vs 4.5 MB of frames): convert to sized WebP (cut-outs keep alpha), `loading="lazy"` on every image that is not in the first screen, and measure the first load with a cold cache before and after.
+165. **Run a text audit script at 1440×900 before the polish round** (font size < 14, contrast < 4.5 vs the nearest solid background, elements past the right edge): it found 9–11px eyebrows, SAMPLE tags, footer headings and dimmed steps that the eye missed. Nav text over a flipping background and outlined ghost words are false positives.
+166. **A decorative icon that looks clickable (a burger with no menu) gets `aria-hidden`**, so Tab does not stop on nothing (Day 23).
+

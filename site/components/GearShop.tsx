@@ -30,7 +30,7 @@ export default function GearShop() {
         {SHOP.map((s, i) => (
           <div key={s.name} className="pc" data-hover-demo={i === 0 || i === 2 ? "" : undefined} data-vc="view" tabIndex={0} onMouseMove={move} onMouseLeave={leave}>
             <div className="lift">
-            <div className="ph"><img src={`${IMG}/${s.img}.jpg`} alt={s.name} /></div>
+            <div className="ph"><img loading="lazy" decoding="async" src={`${IMG}/${s.img}.webp`} alt={s.name} /></div>
             <div className="in">
               <h4>{s.name}</h4>
               <div className="pr">{s.price}<small>SAMPLE</small></div>
