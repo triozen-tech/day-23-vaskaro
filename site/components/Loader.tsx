@@ -12,7 +12,7 @@ export const hasOpened = () => typeof window !== "undefined" && (window as unkno
 /**
  * Loader (I19 "Tracking breath", our variant): VASKARO opens its letter-spacing like a breath, closes onto the logo spacing,
  * a bronze hairline fills with the first hero frames, then the whole plate lifts away as ONE piece (no split) onto the hero.
- * About 1.2 s (waits only if the first frames are late). Sets `data-loader` so ?record=1 starts its clock after it.
+ * About 1.2 s: lift starts at 0.75 s, ends 1.2 s (waits only if the first frames are late). Sets `data-loader` so ?record=1 starts its clock after it.
  */
 export default function Loader() {
   const root = useRef<HTMLDivElement>(null);
@@ -32,10 +32,10 @@ export default function Loader() {
     const el = root.current!;
     const line = el.querySelector(".vk-ld-line i") as HTMLElement;
     ensureClip(HERO_CLIPS[0]);
-    const minAt = performance.now() + 1150;
+    const minAt = performance.now() + 750;
     const tl = gsap.timeline();
     // the breath itself is CSS (.vk-ld-word, from the first paint, before any script runs); the hairline fills with the frames
-    tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power1.inOut" }, 0.05);
+    tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power1.inOut" }, 0.05);
     let lifted = false;
     const lift = () => {
       if (lifted) return;
