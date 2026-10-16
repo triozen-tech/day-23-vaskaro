@@ -184,3 +184,109 @@ html { overflow-x: clip; }
 @keyframes vktick { from { transform: scale(.3) rotate(-90deg); } to { transform: none; } }
 .vk-models .sm.swap h3, .vk-models .sm.swap p, .vk-models .sm.swap .price, .vk-models .tagline.swap { animation: vkswap .7s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes vkswap { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* ===== ROUND 4 · DETAILS ===== */
+/* cursor: dot + trailing ring, shape by data-vc state (mouse only; hidden in record and static) */
+.vcur { position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0; transition: opacity .3s; }
+.vcur.on { opacity: 1; }
+.vcur .d { position: absolute; left: 0; top: 0; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: #B8854A; transform: translate(var(--x, -100px), var(--y, -100px)); transition: opacity .25s, background .25s; mix-blend-mode: normal; }
+.vcur .r { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid #B8854A; display: grid; place-items: center; transform: translate(var(--rx, -100px), var(--ry, -100px)); transition: width .35s cubic-bezier(.2,.7,.1,1), height .35s cubic-bezier(.2,.7,.1,1), margin .35s cubic-bezier(.2,.7,.1,1), background .3s, border-color .3s, border-radius .3s; }
+.vcur .r b { font: 700 11px 'Chivo Variable'; letter-spacing: .18em; color: #101316; opacity: 0; transition: opacity .25s; white-space: nowrap; }
+.vcur[data-s="link"] .r { width: 54px; height: 54px; margin: -27px 0 0 -27px; background: #B8854A22; }
+.vcur[data-s="chip"] .r { width: 18px; height: 18px; margin: -9px 0 0 -9px; background: #B8854A; }
+.vcur[data-s="arrow"] .r { width: 58px; height: 58px; margin: -29px 0 0 -29px; background: #B8854A; }
+.vcur[data-s="view"] .r, .vcur[data-s="ride"] .r { width: 78px; height: 78px; margin: -39px 0 0 -39px; background: #B8854A; }
+.vcur[data-s="pick"] .r { width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 14px; background: #B8854A; }
+.vcur[data-s="go"] .r { width: 84px; height: 84px; margin: -42px 0 0 -42px; background: #EDE7DB; border-color: #EDE7DB; }
+.vcur[data-s="locked"] .r { width: 76px; height: 76px; margin: -38px 0 0 -38px; border-style: dashed; background: #101316; }
+.vcur[data-s="locked"] .r b { color: #B8854A; }
+.vcur:is([data-s="arrow"], [data-s="view"], [data-s="ride"], [data-s="pick"], [data-s="go"], [data-s="locked"]) .r b { opacity: 1; }
+.vcur:is([data-s="chip"], [data-s="arrow"], [data-s="view"], [data-s="ride"], [data-s="pick"], [data-s="go"]) .d { opacity: 0; }
+.vcur.press .r { transform: translate(var(--rx, -100px), var(--ry, -100px)) scale(.86); }
+html.vk-cur-on, html.vk-cur-on * { cursor: none !important; }
+
+/* keyboard focus rings */
+a:focus-visible, button:focus-visible, .rc:focus-visible, .pc:focus-visible { outline: 2px solid #B8854A; outline-offset: 4px; }
+#gear a:focus-visible, #gear button:focus-visible { outline-color: #1A1F24; }
+#foot a:focus-visible { outline-color: #101316; }
+.vk-nav:not(.dark) .r a:focus-visible { outline-color: #EDE7DB; }
+
+/* nav: text roll on hover (M114 style), underline draws left to right; CTA fills */
+.vk-nav .r a.sw { overflow: hidden; display: inline-block; }
+.vk-nav .r a.sw span { display: inline-block; position: relative; transition: transform .45s cubic-bezier(.2,.7,.1,1); }
+.vk-nav .r a.sw span::before { content: attr(data-t); position: absolute; left: 0; top: 100%; color: #B8854A; }
+.vk-nav .r a.sw:hover span { transform: translateY(-100%); }
+.vk-nav .r a.sw:hover { color: inherit; }
+.vk-nav .r a.sw::after { bottom: 0; }
+.vk-nav .r a.cta { border: 1px solid currentColor; padding: 10px 20px; transition: background .35s, color .35s, border-color .35s; }
+.vk-nav .r a.cta::after { display: none; }
+.vk-nav .r a.cta:hover { background: #B8854A; border-color: #B8854A; color: #101316; }
+
+/* models: chips grow with a ring, arrows nudge, card lifts */
+.vk-models .chips button { transition: transform .35s cubic-bezier(.2,.7,.1,1), border-color .35s, background .35s, box-shadow .35s; }
+.vk-models .chips button:hover { transform: scale(1.22); border-color: var(--c); box-shadow: 0 0 0 5px color-mix(in srgb, var(--c) 28%, transparent); }
+.vk-models .arrows button { transition: transform .35s cubic-bezier(.2,.7,.1,1), background .3s; }
+.vk-models .arrows button:hover { background: #B8854A; transform: scale(1.18); }
+#mprev:hover { transform: translateX(-4px) scale(1.18); }
+#mnext:hover { transform: translateX(4px) scale(1.18); }
+.vk-models .card { transition: transform .45s cubic-bezier(.2,.7,.1,1), border-color .3s, background .3s; }
+.vk-models .card:hover { transform: translateY(-6px); border-color: #B8854A; background: #ffffff16; }
+
+/* gear: inner layer tilts + lifts, product swaps to a second crop, colour dots pop in turn, add slides up */
+.pc .lift { position: absolute; inset: 0; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0); transition: transform .5s cubic-bezier(.2,.7,.1,1); }
+.pc:hover .lift { transition-duration: .18s; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px); }
+.pc { transition: box-shadow .45s, border-color .3s; }
+.pc:hover { box-shadow: 0 26px 50px -18px #1a1f2455; border-color: #1a1f2455; }
+.pc .ph img { transition: transform .8s cubic-bezier(.2,.7,.1,1), object-position .8s cubic-bezier(.2,.7,.1,1); }
+.pc:hover .ph img { transform: scale(1.22); object-position: 70% 30%; }
+.pc .chip { transition: transform .4s cubic-bezier(.2,.7,.1,1), box-shadow .3s; }
+.pc:hover .chip { transform: scale(1.35); box-shadow: 0 0 0 2px #fff, 0 0 0 3px #1a1f2455; }
+.pc .add { border: 0; width: calc(100% - 32px); font-size: 14px; cursor: pointer; transition: bottom .45s cubic-bezier(.2,.7,.1,1), background .3s; }
+.pc .add span { display: inline-block; transition: transform .3s; }
+.pc .add:hover { background: #B8854A; color: #101316; }
+.pc .add:hover span { transform: translateX(6px); }
+.pc:focus-within .add { bottom: 16px; }
+
+/* roads: second line draws over the road on hover and un-draws after; photo breathes in */
+.rc { transition: border-color .4s, transform .5s cubic-bezier(.2,.7,.1,1); }
+.rc:hover { border-color: #B8854A; transform: translateY(-8px); }
+.rc img { transition: transform 1.2s cubic-bezier(.2,.7,.1,1); }
+.rc:hover img { transform: scale(1.08); }
+.rc .rp2 { stroke: #EDE7DB; stroke-dasharray: 700; stroke-dashoffset: 700; opacity: 0; transition: stroke-dashoffset 1.3s cubic-bezier(.5,.1,.2,1), opacity .5s .2s; }
+.rc:hover .rp2, .rc:focus-visible .rp2 { stroke-dashoffset: 0; opacity: 1; transition: stroke-dashoffset 1.3s cubic-bezier(.5,.1,.2,1), opacity .2s; }
+.rc .t p { transition: letter-spacing .5s, color .3s; }
+.rc:hover .t p { letter-spacing: .24em; color: #EDE7DB; }
+
+/* booking: slots fill from below, confirm arrow slides */
+.slot { position: relative; overflow: hidden; z-index: 0; }
+.slot::before { content: ""; position: absolute; inset: 0; background: #B8854A55; transform: translateY(101%); transition: transform .4s cubic-bezier(.2,.7,.1,1); z-index: -1; }
+.slot:hover::before { transform: none; }
+.slot:hover { border-color: #B8854A; }
+.slot:focus-visible::before { transform: none; }
+.vk-book .cwrap { display: inline-block; }
+.vk-book .btn .arr { display: inline-block; transition: transform .35s; opacity: 0; width: 0; overflow: hidden; vertical-align: bottom; }
+.vk-book .btn.live .arr { opacity: 1; width: auto; }
+.vk-book .btn.live:hover { background: #B8854A; letter-spacing: .26em; }
+.vk-book .btn.live:hover .arr { transform: translateX(6px); }
+.vk-book .btn { font-size: 14px; cursor: pointer; transition: background .3s, letter-spacing .4s, opacity .3s; }
+.vk-book .btn:disabled { cursor: not-allowed; opacity: .55; }
+
+/* footer links */
+#foot .cols a { display: block; position: relative; width: max-content; transition: transform .35s cubic-bezier(.2,.7,.1,1); }
+#foot .cols a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: #101316; transform: scaleX(0); transform-origin: right; transition: transform .4s; }
+#foot .cols a:hover { transform: translateX(8px); }
+#foot .cols a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* idle breathing on key elements (always on; only ?static=1 turns it off, via the engine class) */
+@keyframes vkbreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes vkglow { 0%, 100% { box-shadow: 0 0 0 0 #B8854A00; } 50% { box-shadow: 0 0 0 7px #B8854A33; } }
+.vk-nav .r a.cta { animation: vkglow 3.6s ease-in-out infinite; }
+.vk-models .chips button.on:not(:hover) { animation: vkglow 3.2s ease-in-out infinite; }
+.vk-models .arrows button:not(:hover) { animation: vkglow 4s ease-in-out infinite; }
+html.is-static .vk-nav .r a.cta, html.is-static .vk-models .chips button.on, html.is-static .vk-models .arrows button { animation: none !important; }
+
+/* booking is never still: a slow sheen crosses the form and the next step's ring breathes */
+.vk-book .form { overflow: hidden; }
+.vk-book .form::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(237,231,219,.10) 50%, transparent 60%); background-size: 250% 100%; animation: vksheen 3.2s linear infinite; }
+.step:not(.on) i { animation: vkglow 2s ease-in-out infinite; }
+html.is-static .vk-book .form::after, html.is-static .step i { animation: none !important; }

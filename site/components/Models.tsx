@@ -77,11 +77,11 @@ export default function Models() {
         ))}
         <div className="sm"><h3 id="mname">{MODELS[0].f}</h3><p id="mtxt">{MODELS[0].t}</p><div className="price" id="mprice">{MODELS[0].p} <small>SAMPLE</small></div></div>
         <div className="chips" id="mchips">
-          {MODELS.map((m, i) => <button key={m.n} className={i === 0 ? "on" : ""} aria-label={m.f} onClick={() => jump(i)} />)}
+          {MODELS.map((m, i) => <button key={m.n} className={i === 0 ? "on" : ""} aria-label={m.f} data-vc="chip" onClick={() => jump(i)} />)}
         </div>
-        <div className="arrows"><button id="mprev" aria-label="Previous model" onClick={() => jump(st.current.cur - 1)} /><button id="mnext" aria-label="Next model" onClick={() => jump(st.current.cur + 1)} /></div>
+        <div className="arrows"><button id="mprev" aria-label="Previous model" data-vc="arrow" data-vcl="PREV" onClick={() => jump(st.current.cur - 1)} /><button id="mnext" aria-label="Next model" data-vc="arrow" data-vcl="NEXT" onClick={() => jump(st.current.cur + 1)} /></div>
         <div className="tagline" id="mtag">Climb<br />Calmly</div>
-        <div className="card"><b>See details</b>Uncover the hidden<br />stories<div className="th" /></div>
+        <div className="card" data-vc="view"><b>See details</b>Uncover the hidden<br />stories<div className="th" /></div>
         <div className="prog"><i id="mprog" /></div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Magnetic from "@/components/ui/Magnetic";
 
 /** Fixed nav; turns dark-on-paper while it crosses the gear shop. */
 export default function Nav() {
@@ -22,7 +23,8 @@ export default function Nav() {
       <b>VASKARO</b>
       <div className="mid">Mountain roads on a scroll wheel.</div>
       <div className="r">
-        <a href="#models">Models</a><a href="#gear">Gear</a><a href="#roads">Rides</a><a href="#book" data-hover-demo>Book a ride</a>
+        {[["#models", "Models"], ["#gear", "Gear"], ["#roads", "Rides"]].map(([h, t]) => <a key={h} href={h} className="sw"><span data-t={t}>{t}</span></a>)}
+        <Magnetic strength={0.3}><a href="#book" className="cta" data-hover-demo>Book a ride</a></Magnetic>
         <div className="burger" />
       </div>
     </nav>

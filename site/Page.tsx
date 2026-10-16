@@ -8,11 +8,13 @@ import GearShop from "./components/GearShop";
 import Roads from "./components/Roads";
 import Booking from "./components/Booking";
 import Footer from "./components/Footer";
+import VCursor from "./components/VCursor";
 
 export default function Page() {
   return (
     <main>
       <Loader />
+      <VCursor />
       <Nav />
       <Hero />
       <Models />

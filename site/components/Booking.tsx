@@ -1,4 +1,5 @@
 "use client";
+import Magnetic from "@/components/ui/Magnetic";
 import { useRef, useState } from "react";
 import { BOOK } from "../content";
 import { entry, prog, sm, useFrame } from "./kit";
@@ -39,12 +40,12 @@ export default function Booking() {
               <div className={"step" + (pick[k] !== null || k === first ? " on" : "")}><i>✓</i>{STEPS[k]}</div>
               <div className="row">
                 {row.map((s, j) => (
-                  <button key={s} className={"slot" + (pick[k] === j ? " on" : "")} data-hover-demo={k === 0 && j === 1 ? "click" : undefined} onClick={() => { touched.current = true; setPick((o) => o.map((v, i) => (i === k ? j : v))); }}>{s}</button>
+                  <button key={s} className={"slot" + (pick[k] === j ? " on" : "")} data-vc="pick" data-hover-demo={k === 0 && j === 1 ? "click" : undefined} onClick={() => { touched.current = true; setPick((o) => o.map((v, i) => (i === k ? j : v))); }}>{s}</button>
                 ))}
               </div>
             </div>
           ))}
-          <button className={"btn" + (ok ? " live" : "")} disabled={!ok}>{ok ? "CONFIRM RIDE →" : "CONFIRM RIDE"}</button>
+          <Magnetic strength={0.25}><span data-vc="confirm" className="cwrap"><button className={"btn" + (ok ? " live" : "")} disabled={!ok}>{ok ? "CONFIRM RIDE" : "CONFIRM RIDE"}<span className="arr"> →</span></button></span></Magnetic>
         </div>
       </div>
     </section>

@@ -90,3 +90,16 @@ Empty. When the user pastes back the prompts that were run: asset ID · date · 
 | Gear shop / Roads | stagger rise / line draw | cards rise in a stagger; each road line draws as its card enters |
 | Booking | steps tick + live confirm | scroll ticks the 3 steps in order (until the visitor clicks); confirm pulses |
 | Footer | wordmark rise + idle stripes | letters rise; stripes and drift keep it alive |
+
+## Round 4 · Details (hover map, as built)
+| Item | Hover | Codes |
+|---|---|---|
+| Cursor (VCursor, mouse only, off in ?record/?static) | dot + ring; states link · chip · arrow (PREV/NEXT) · view · ride · pick · locked (PICK 3) · go | M164-style ring, custom |
+| Nav links | text rolls up to a bronze copy (M114), underline draws | M114 |
+| Book a ride | fills bronze, magnetic, idle glow | Magnetic |
+| Model chips / arrows / card | chip grows with ring, arrows nudge, card lifts; active chip breathes | custom |
+| Gear cards `data-hover-demo` | inner layer tilts + lifts, second crop of the photo, colour dots pop in turn, ADD slides up | M165-style |
+| Road cards | second light line redraws over the road, un-draws on leave; photo drifts | custom |
+| Booking | slots fill from below, confirm arrow slides, magnetic; sheen + next-step ring breathe | custom |
+| Footer | real links, shift right + underline | M290-style |
+Focus rings: bronze 2px outline on every link, button, road and gear card. Hover demos in the reel: Book a ride, 2 gear cards, Tea Terrace Run, booking slot (click).

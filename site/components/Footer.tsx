@@ -23,9 +23,9 @@ export default function Footer() {
   return (
     <footer id="foot" data-record-time="2.8" data-record-hold="0.8" ref={root}>
       <div className="cols">
-        <div><b>RIDE</b>Models<br />Test ride<br />Rides</div>
-        <div><b>SHOP</b>Gear<br />Service pack ₹ 12,000<br />Tyre-change day ₹ 3,500</div>
-        <div><b>VASKARO</b>Story<br />Contact</div>
+        <div><b>RIDE</b><a href="#models">Models</a><a href="#book">Test ride</a><a href="#roads">Rides</a></div>
+        <div><b>SHOP</b><a href="#gear">Gear</a><a href="#book">Service pack ₹ 12,000</a><a href="#book">Tyre-change day ₹ 3,500</a></div>
+        <div><b>VASKARO</b><a href="#models">Story</a><a href="#book">Contact</a></div>
       </div>
       <div className="note">All prices sample.<br />Concept website by Triozen Tech</div>
       <div className="word">{[..."VASKARO"].map((c, i) => <span key={i}>{c}</span>)}</div>
