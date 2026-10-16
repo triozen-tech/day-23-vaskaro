@@ -57,5 +57,6 @@ raw-orig/
 public/frames/*
 !public/frames/.gitkeep
 *.mp4
+!raw/*.mp4
 *.webm
 .cache/
