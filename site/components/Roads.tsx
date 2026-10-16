@@ -9,7 +9,7 @@ export default function Roads() {
   const root = useRef<HTMLDivElement>(null);
   useFrame(root, (_t, still) => {
     const r = root.current!;
-    const p = still ? 1 : prog(track.current!);
+    const p = still ? 1 : clamp((prog(track.current!) - 0.07) / 0.86); // short holds at both ends: card 1 sits in line with the heading, the last card settles
     // X3 edge shape morph: the paper's edge is a mountain ridge that flattens as the rail arrives
     const e = still ? 1 : sm(entry(track.current!), 0, 0.85);
     const A = (1 - e) * 300;
