@@ -8,8 +8,8 @@ html { overflow-x: clip; }
 /* NAV */
 .vk-nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; border-bottom: 1px solid rgba(237,231,219,.16); backdrop-filter: blur(6px); background: linear-gradient(#101316cc, #10131600); transition: color .3s, background .3s, border-color .3s; }
 .vk-nav b { font: 400 22px 'Gilda Display'; letter-spacing: .3em; }
-.vk-nav .mid { font-size: 10px; letter-spacing: .12em; color: #EDE7DBaa; max-width: 200px; line-height: 1.4; transition: color .3s; }
-.vk-nav .r { display: flex; gap: 34px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; align-items: center; }
+.vk-nav .mid { font-size: 14px; letter-spacing: .12em; color: #EDE7DBaa; max-width: 200px; line-height: 1.4; transition: color .3s; }
+.vk-nav .r { display: flex; gap: 34px; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; align-items: center; }
 .vk-nav .burger { width: 22px; height: 8px; border-top: 1.5px solid #EDE7DB; border-bottom: 1.5px solid #EDE7DB; transition: border-color .3s; }
 .vk-nav.dark { color: #1A1F24; background: linear-gradient(#EDE7DBf2, #EDE7DB00); border-color: #1a1f2433; }
 .vk-nav.dark .mid { color: #1A1F24bb; }
@@ -27,10 +27,10 @@ html { overflow-x: clip; }
 .ghost { position: absolute; right: 70px; top: 190px; font: 900 220px/1 'Chivo Variable'; color: transparent; -webkit-text-stroke: 2px #EDE7DB55; }
 .tag2 { position: absolute; right: 90px; bottom: 170px; text-align: right; font: 300 28px/1.15 'Chivo Variable'; letter-spacing: .04em; }
 .tag2 em { font: italic 400 28px 'Gilda Display'; }
-.tag2 p { font-size: 11px; line-height: 1.6; color: #EDE7DBbb; margin-top: 18px; max-width: 240px; margin-left: auto; letter-spacing: .04em; }
-.tag2 u { font-size: 10px; letter-spacing: .2em; text-decoration: none; display: block; margin-top: 14px; color: #B8854A; }
-.vk-small { position: absolute; font-size: 10px; line-height: 1.7; max-width: 210px; color: #EDE7DBaa; }
-.drag { position: absolute; font-size: 9px; letter-spacing: .2em; color: #EDE7DBcc; }
+.tag2 p { font-size: 14px; line-height: 1.6; color: #EDE7DBbb; margin-top: 18px; max-width: 240px; margin-left: auto; letter-spacing: .04em; }
+.tag2 u { font-size: 14px; letter-spacing: .2em; text-decoration: none; display: block; margin-top: 14px; color: #B8854A; }
+.vk-small { position: absolute; font-size: 14px; line-height: 1.7; max-width: 210px; color: #EDE7DBaa; }
+.drag { position: absolute; font-size: 14px; letter-spacing: .2em; color: #EDE7DBcc; }
 
 /* MODELS */
 .vk-models { background: radial-gradient(ellipse at 50% 40%, #232b36, #0f1318 70%); }
@@ -44,7 +44,7 @@ html { overflow-x: clip; }
 .vk-models .bike.on { opacity: 1; transform: none; filter: none; }
 .vk-models .sm { position: absolute; left: 40px; top: 150px; width: 260px; }
 .vk-models .sm h3 { font: 900 20px 'Chivo Variable'; letter-spacing: .12em; text-transform: uppercase; }
-.vk-models .sm p { font-size: 10px; line-height: 1.7; color: #EDE7DBaa; margin-top: 12px; }
+.vk-models .sm p { font-size: 14px; line-height: 1.7; color: #EDE7DBaa; margin-top: 12px; }
 .vk-models .sm .price { margin-top: 16px; font: 400 24px 'Gilda Display'; color: #B8854A; }
 .vk-models .sm .price small { font: 700 9px 'Chivo Variable'; letter-spacing: .14em; color: #EDE7DBaa; }
 .vk-models .chips { position: absolute; right: 40px; top: 90px; display: flex; gap: 8px; }
@@ -54,8 +54,8 @@ html { overflow-x: clip; }
 .vk-models .arrows { position: absolute; right: 140px; top: 360px; display: flex; gap: 8px; }
 .vk-models .arrows button { width: 28px; height: 28px; border-radius: 50%; background: #EDE7DB; border: 0; display: block; }
 .vk-models .tagline { position: absolute; left: 40px; bottom: 70px; font: 300 22px/1.2 'Chivo Variable'; }
-.vk-models .card { position: absolute; right: 0; bottom: 0; width: 330px; height: 170px; background: #ffffff0d; border: 1px solid rgba(237,231,219,.16); padding: 22px; font-size: 10px; line-height: 1.6; }
-.vk-models .card b { display: block; font-size: 11px; letter-spacing: .14em; }
+.vk-models .card { position: absolute; right: 0; bottom: 0; width: 330px; height: 170px; background: #ffffff0d; border: 1px solid rgba(237,231,219,.16); padding: 22px; font-size: 14px; line-height: 1.6; }
+.vk-models .card b { display: block; font-size: 14px; letter-spacing: .14em; }
 .vk-models .card .th { position: absolute; right: 0; top: 0; width: 150px; height: 100%; background: linear-gradient(135deg, var(--c), #0008); }
 .vk-models .prog { position: absolute; left: 40px; right: 40px; bottom: 36px; height: 2px; background: rgba(237,231,219,.16); }
 .vk-models .prog i { position: absolute; left: 0; top: 0; height: 2px; background: #EDE7DB; width: 0; }
@@ -64,14 +64,14 @@ html { overflow-x: clip; }
 .vk-gate { background: #1A1F24; }
 .vk-gate .road { position: absolute; inset: 0; width: 1440px; height: 900px; }
 .vk-gate h2 { font: 400 84px/1 'Gilda Display'; position: absolute; left: 80px; top: 230px; width: 520px; }
-.vk-gate .cap { position: absolute; left: 80px; top: 560px; width: 400px; font-size: 13px; line-height: 1.7; color: #EDE7DBbb; }
+.vk-gate .cap { position: absolute; left: 80px; top: 560px; width: 400px; font-size: 14px; line-height: 1.7; color: #EDE7DBbb; }
 .vk-gate .gnum { position: absolute; left: 1000px; transform: translateX(-50%); top: 330px; font: 400 240px/1 'Gilda Display'; color: #EDE7DB; }
 
 /* ENGINE */
 .vk-engine { background: #101316; }
-.call { position: absolute; font-size: 11px; letter-spacing: .1em; opacity: 0; }
+.call { position: absolute; font-size: 14px; letter-spacing: .1em; opacity: 0; }
 .call b { display: block; font: 400 54px/1 'Gilda Display'; color: #B8854A; }
-.call span { opacity: .7; text-transform: uppercase; letter-spacing: .18em; font-size: 10px; }
+.call span { opacity: .7; text-transform: uppercase; letter-spacing: .18em; font-size: 14px; }
 
 /* GEAR */
 #gear { background: #EDE7DB; color: #1A1F24; padding: 110px 70px; height: 900px; position: relative; z-index: 3; }
@@ -99,20 +99,20 @@ html { overflow-x: clip; }
 .rc svg { position: absolute; inset: 0; z-index: 1; }
 .rc .t { position: absolute; left: 24px; bottom: 26px; z-index: 2; }
 .rc .t h3 { font: 400 36px 'Gilda Display'; }
-.rc .t p { font-size: 11px; letter-spacing: .14em; color: #B8854A; text-transform: uppercase; margin-top: 6px; }
+.rc .t p { font-size: 14px; letter-spacing: .14em; color: #B8854A; text-transform: uppercase; margin-top: 6px; }
 
 /* BOOK */
 .vk-book { background: #101316; padding: 100px 80px; }
 .vk-book h2 { font: 400 72px/1 'Gilda Display'; width: 520px; margin-top: 20px; }
-.vk-book .lead { margin-top: 26px; font-size: 13px; line-height: 1.7; color: #EDE7DBaa; width: 400px; }
+.vk-book .lead { margin-top: 26px; font-size: 14px; line-height: 1.7; color: #EDE7DBaa; width: 400px; }
 .vk-book .intro { position: absolute; left: 80px; top: 50%; transform: translateY(-50%); }
 .vk-book .form { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 640px; background: #1A1F24; border: 1px solid rgba(237,231,219,.16); padding: 36px; }
 .vk-book .row { display: flex; gap: 10px; margin: 14px 0; }
-.slot { flex: 1; border: 1px solid rgba(237,231,219,.16); padding: 14px 0; text-align: center; font-size: 12px; letter-spacing: .1em; transition: .3s; cursor: pointer; background: none; color: inherit; }
+.slot { flex: 1; border: 1px solid rgba(237,231,219,.16); padding: 14px 0; text-align: center; font-size: 14px; letter-spacing: .1em; transition: .3s; cursor: pointer; background: none; color: inherit; }
 .slot.on { background: #B8854A; color: #101316; border-color: #B8854A; }
-.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; opacity: .4; transition: .4s; }
+.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; opacity: .4; transition: .4s; }
 .step.on { opacity: 1; }
-.step i { width: 20px; height: 20px; border: 1.5px solid #B8854A; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 11px; color: #101316; transition: .3s; }
+.step i { width: 20px; height: 20px; border: 1.5px solid #B8854A; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 14px; color: #101316; transition: .3s; }
 .step.on i { background: #B8854A; }
 .vk-book .btn { display: inline-block; margin-top: 20px; background: #EDE7DB; color: #101316; padding: 16px 32px; font: 700 11px 'Chivo Variable'; letter-spacing: .22em; border: 0; transition: .3s; }
 
@@ -120,9 +120,9 @@ html { overflow-x: clip; }
 #foot { background: #B8854A; color: #101316; height: 900px; position: relative; overflow: hidden; }
 #foot .word { position: absolute; left: 64px; bottom: 30px; font: 400 262px/1 'Gilda Display'; letter-spacing: -.02em; white-space: nowrap; }
 #foot .word span { display: inline-block; }
-#foot .cols { position: absolute; left: 70px; top: 130px; display: flex; gap: 90px; font-size: 12px; line-height: 2; letter-spacing: .1em; }
+#foot .cols { position: absolute; left: 70px; top: 130px; display: flex; gap: 90px; font-size: 14px; line-height: 2; letter-spacing: .1em; }
 #foot .cols b { display: block; font: 700 10px 'Chivo Variable'; letter-spacing: .24em; margin-bottom: 10px; }
-#foot .note { position: absolute; right: 70px; top: 130px; font-size: 11px; letter-spacing: .14em; text-align: right; line-height: 1.8; }
+#foot .note { position: absolute; right: 70px; top: 130px; font-size: 14px; letter-spacing: .14em; text-align: right; line-height: 1.8; }
 
 /* NAV link hover */
 .vk-nav .r a { position: relative; transition: color .3s; }
@@ -132,7 +132,7 @@ html { overflow-x: clip; }
 
 .engwrap { position: absolute; inset: 0; will-change: transform; }
 
-.vk-roads .rfoot { position: absolute; left: 80px; right: 80px; top: 790px; display: flex; align-items: center; gap: 28px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #EDE7DBcc; }
+.vk-roads .rfoot { position: absolute; left: 80px; right: 80px; top: 790px; display: flex; align-items: center; gap: 28px; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: #EDE7DBcc; }
 .vk-roads .rbar { flex: 1; height: 2px; background: rgba(237,231,219,.16); position: relative; }
 .vk-roads .rbar i { position: absolute; left: 0; top: 0; height: 2px; background: #B8854A; width: 0; }
 .vk-roads .rfoot #rname { min-width: 300px; text-align: right; color: #B8854A; }

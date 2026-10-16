@@ -6,7 +6,7 @@ import { entry, prog, sm, useFrame } from "./kit";
 const ROWS = [BOOK.models, BOOK.days, BOOK.slots];
 const STEPS = ["1 · Choose model", "2 · Choose day", "3 · Choose slot"];
 
-/** Booking: arrives on a diagonal wipe (X7); scroll ticks the three steps in order (until the visitor clicks), then the confirm button comes alive. */
+/** Booking: arrives on a diagonal wipe (X7); in ?record=1 scroll ticks the three steps in order; normally the visitor clicks, then the confirm button comes alive. */
 export default function Booking() {
   const track = useRef<HTMLElement>(null);
   const root = useRef<HTMLDivElement>(null);
@@ -17,7 +17,8 @@ export default function Booking() {
     // X7 diagonal wipe: a slanted edge sweeps up and flattens as the booking arrives
     const e = still ? 1 : sm(entry(track.current!), 0, 0.85);
     r.style.clipPath = e >= 1 ? "" : `polygon(0 ${((1 - e) * 360).toFixed(1)}px,100% 0,100% 100%,0 100%)`;
-    if (still || touched.current) return;
+    // auto-ticking from scroll is for ?record=1 only; in normal mode the visitor clicks
+    if (still || touched.current || !/[?&]record=1/.test(location.search)) return;
     const p = prog(track.current!);
     const next = [0, 1, 2].map((k) => (p > k * 0.3 + 0.08 ? (k + 1) % ROWS[k].length : null));
     setPick((o) => (o.every((v, i) => v === next[i]) ? o : next));

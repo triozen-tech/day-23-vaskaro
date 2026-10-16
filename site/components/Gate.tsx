@@ -14,7 +14,9 @@ export default function Gate() {
     // one gear per scroll step (M30): the dial dwells on each gear, then turns to the next in the last part of its step
     const raw = Math.min(5, p * 5.0001), fl = Math.floor(raw);
     const gp = fl >= 5 ? 5 : fl + sm(raw - fl, 0.3, 1), gi = Math.round(gp);
-    $("#gdial").setAttribute("transform", `rotate(${-gp * 60 + (still ? 0 : Math.sin(t * 1.5) * 0.6)})`);
+    const dial = -gp * 60 + (still ? 0 : Math.sin(t * 1.5) * 0.6);
+    $("#gdial").setAttribute("transform", `rotate(${dial})`);
+    r.querySelectorAll<SVGTextElement>("text.gn6").forEach((n, i) => n.setAttribute("transform", `rotate(${-(i * 60 + dial)} 0 -200)`));
     const rp = $("#rpath") as unknown as SVGPathElement;
     const L = rp.getTotalLength(), k = gp / 5;
     rp.style.strokeDasharray = String(L);
@@ -44,7 +46,7 @@ export default function Gate() {
               {[0, 1, 2, 3, 4, 5].map((i) => (
                 <g key={i} transform={`rotate(${i * 60})`}>
                   <circle cy="-200" r="24" fill="#1A1F24" stroke="#EDE7DB55" strokeWidth="2" />
-                  <text y="-193" textAnchor="middle" fill="#EDE7DB" fontFamily="Gilda Display" fontSize="22" transform={`rotate(${-i * 60} 0 -200)`}>{i + 1}</text>
+                  <text className="gn6" y="-193" textAnchor="middle" fill="#EDE7DB" fontFamily="Gilda Display" fontSize="22" transform={`rotate(${-i * 60} 0 -200)`}>{i + 1}</text>
                 </g>
               ))}
             </g>

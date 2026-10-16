@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { IMG, MODELS } from "../content";
 import { prog, useFrame } from "./kit";
 
-/** Models: the scroll picks the model (a 1 s lock keeps fast scroll and reverse from overlapping); chips and arrows scroll to a step. */
+/** Models: the scroll picks the model one step at a time (a 1 s lock lets each swap finish; the wanted model is remembered and reached step by step); chips and arrows scroll to a step. */
 export default function Models() {
   const track = useRef<HTMLElement>(null);
   const root = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export default function Models() {
     s.want = i;
     if (s.busy || i === s.cur) return;
     s.busy = true;
-    setModel(i);
+    setModel(s.cur + Math.sign(i - s.cur)); // always one step: Passo > Cima > Vetta, never a skip
     setTimeout(() => { s.busy = false; if (s.want !== s.cur) goModel(s.want); }, 1000);
   };
   const jump = (i: number) => {
