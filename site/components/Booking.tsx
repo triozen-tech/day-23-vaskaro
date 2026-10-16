@@ -45,7 +45,7 @@ export default function Booking() {
               </div>
             </div>
           ))}
-          <Magnetic strength={0.25}><span data-vc="confirm" className="cwrap"><button className={"btn" + (ok ? " live" : "")} disabled={!ok}>{ok ? "CONFIRM RIDE" : "CONFIRM RIDE"}<span className="arr"> →</span></button></span></Magnetic>
+          <Magnetic strength={0.25}><span data-vc="confirm" className="cwrap"><button className={"btn" + (ok ? " live" : "")} aria-disabled={!ok} onClick={(e) => { if (!ok) e.preventDefault(); }}>{ok ? "CONFIRM RIDE" : "CONFIRM RIDE"}<span className="arr"> →</span></button></span></Magnetic>
         </div>
       </div>
     </section>

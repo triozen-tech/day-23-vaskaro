@@ -10,9 +10,9 @@ export const OPEN_EVENT = "vk:open";
 export const hasOpened = () => typeof window !== "undefined" && (window as unknown as { __vkOpen?: boolean }).__vkOpen === true;
 
 /**
- * Loader (I19 "Tracking breath", our variant): VASKARO opens its letter-spacing like a breath, closes onto the logo spacing,
- * a bronze hairline fills with the first hero frames, then the whole plate lifts away as ONE piece (no split) onto the hero.
- * About 1.2 s: lift starts at 0.75 s, ends 1.2 s (waits only if the first frames are late). Sets `data-loader` so ?record=1 starts its clock after it.
+ * Loader (I-VK1 "Headlight", custom): a bronze dot lights at the left, a soft beam sweeps VASKARO (letters show only where it has touched),
+ * then the beam widens until it floods the screen and the plate opens onto the hero. The sweep is CSS (--p, from the first paint);
+ * the flood is one tween of --w. About 1.15 s: the flood starts at 0.75 s (waits only if the first frames are late). Sets `data-loader` so ?record=1 starts its clock after it.
  */
 export default function Loader() {
   const root = useRef<HTMLDivElement>(null);
@@ -30,19 +30,17 @@ export default function Loader() {
       return;
     }
     const el = root.current!;
-    const line = el.querySelector(".vk-ld-line i") as HTMLElement;
     ensureClip(HERO_CLIPS[0]);
     const minAt = performance.now() + 750;
-    const tl = gsap.timeline();
-    // the breath itself is CSS (.vk-ld-word, from the first paint, before any script runs); the hairline fills with the frames
-    tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power1.inOut" }, 0.05);
     let lifted = false;
     const lift = () => {
       if (lifted) return;
       lifted = true;
-      gsap.to(el, {
-        yPercent: -100, duration: 0.45, ease: "power3.inOut",
-        onStart: open,
+      open();
+      const v = { w: 0 };
+      gsap.to(v, {
+        w: 1, duration: 0.4, ease: "power2.in",
+        onUpdate: () => el.style.setProperty("--w", v.w.toFixed(4)),
         onComplete: () => { setGone(true); loading.markFinished(); },
       });
     };
@@ -50,14 +48,15 @@ export default function Loader() {
       if (performance.now() >= minAt && clipProgress(HERO_CLIPS[0]) > 0.2) { clearInterval(poll); lift(); }
     }, 40);
     const hard = setTimeout(() => { clearInterval(poll); lift(); }, 7000);
-    return () => { clearInterval(poll); clearTimeout(hard); tl.kill(); };
+    return () => { clearInterval(poll); clearTimeout(hard); };
   }, []);
 
   if (gone) return null;
   return (
     <div ref={root} data-loader className="vk-ld" aria-hidden>
-      <div className="vk-ld-word">VASKARO</div>
-      <div className="vk-ld-line"><i /></div>
+      <div className="vk-ld-beam"><i /></div>
+      <div className="vk-ld-word"><span>VASKARO</span></div>
+      <div className="vk-ld-dot" />
     </div>
   );
 }

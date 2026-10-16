@@ -195,3 +195,6 @@ Short rules learned the hard way on Days 1–7. `/new-site` and every round star
 158. **Cards must match what is on screen**: time every card window against the actual frames (use the `CARD` table), not the planned clip length.
 159. **Price cards need a hold**: a still between V11 and V12 (~6% of the scroll) gives the cards time to be read.
 160. **The cover badge is part of the locked spec** (empty black box for Instagram's view count); if a cover must have no empty box, paint it out after `npm run cover`, don't edit the script.
+152. **Never clean temp shots with a wildcard** (`r[0-9_]*.png` also matched `r4-hover-*` and earlier rounds' sheets): delete temp files by exact name or keep them in a temp folder (Day 23).
+153. **A loader that is dark and slow-moving fails freezedetect** (0.4 s of near-black reads as frozen): keep the beam and its dot pulsing, and let the sweep run right up to the flood (Day 23).
+154. **Use `aria-disabled`, not `disabled`, on a locked confirm button** so keyboard users can reach it and the focus ring shows (Day 23).

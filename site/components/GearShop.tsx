@@ -28,7 +28,7 @@ export default function GearShop() {
       <h2>Dress for the pass.</h2>
       <div className="grid">
         {SHOP.map((s, i) => (
-          <div key={s.name} className="pc" data-hover-demo={i === 0 || i === 2 ? "" : undefined} data-vc="view" onMouseMove={move} onMouseLeave={leave}>
+          <div key={s.name} className="pc" data-hover-demo={i === 0 || i === 2 ? "" : undefined} data-vc="view" tabIndex={0} onMouseMove={move} onMouseLeave={leave}>
             <div className="lift">
             <div className="ph"><img src={`${IMG}/${s.img}.jpg`} alt={s.name} /></div>
             <div className="in">

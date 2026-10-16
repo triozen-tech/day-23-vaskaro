@@ -12,7 +12,7 @@ export default function VCursor() {
     if (isStatic() || /[?&]record=1/.test(location.search)) return;
     const el = root.current!, ring = el.querySelector(".r") as HTMLElement, lab = el.querySelector("b") as HTMLElement;
     const html = document.documentElement;
-    let x = -100, y = -100, rx = -100, ry = -100, on = false, raf = 0, shown = false;
+    let x = -100, y = -100, rx = -100, ry = -100, on = false, raf = 0, shown = false, n = 0;
     const state = (t: EventTarget | null) => {
       const q = t as HTMLElement | null;
       const n = (q?.closest?.("[data-vc]") || q?.closest?.("a, button")) as HTMLElement | null;
@@ -32,6 +32,8 @@ export default function VCursor() {
     const up = () => el.classList.remove("press");
     const leave = () => { el.classList.remove("on"); on = false; };
     const loop = () => {
+      // the page can scroll under a resting mouse (no pointer event fires): re-read what is under it a few times a second
+      if (on && ++n % 8 === 0) state(document.elementFromPoint(x, y));
       rx += (x - rx) * 0.22; ry += (y - ry) * 0.22;
       el.style.setProperty("--x", x + "px"); el.style.setProperty("--y", y + "px");
       el.style.setProperty("--rx", rx.toFixed(1) + "px"); el.style.setProperty("--ry", ry.toFixed(1) + "px");

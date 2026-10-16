@@ -71,7 +71,7 @@ Empty. When the user pastes back the prompts that were run: asset ID · date · 
 ## Round 2 motion map (as built)
 | Section | Layout | Motion | How it plays |
 |---|---|---|---|
-| Loader | — | I19 variant (breath + one-piece lift) | wordmark breathes, bronze glow, hairline fills, plate lifts |
+| Loader | — | **I-VK1 Headlight** (custom, new; not any earlier day's I code) | black; bronze dot lights at the left; soft beam sweeps VASKARO, letters show only where it touched; beam widens into a hole that floods the screen onto the hero; ~1.15 s, once; no shutter, flash or hairline |
 | Hero | HR | M21 hook type-in + M8 arc draw + M27 scrub (V1>V2>V3>V4) | opens on the loader-open event; handle follows scroll |
 | Gate | GL | M30 dial | one gear per step, bike marker moves along the road line |
 | Models | — | M27 pin, scroll picks model | pin and release |
