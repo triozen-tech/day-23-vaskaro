@@ -36,9 +36,19 @@ export default function Gate() {
     <section className="track" id="gate" data-record-time="5" ref={track} style={{ height: 3000 }}>
       <div className="pin vk-gate" ref={root}>
         <svg className="road" viewBox="0 0 1440 900">
+          <defs>
+            {/* the road line fades out where it passes the big numeral, so it never crosses the digit */}
+            <radialGradient id="gfade"><stop offset="0" stopColor="#000" /><stop offset=".62" stopColor="#000" /><stop offset="1" stopColor="#fff" /></radialGradient>
+            <mask id="gmask" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="900">
+              <rect width="1440" height="900" fill="#fff" />
+              <ellipse cx="1000" cy="450" rx="170" ry="190" fill="url(#gfade)" />
+            </mask>
+          </defs>
+          <g mask="url(#gmask)">
           <path id="rpath" d="M-20 820 C300 760 380 560 700 600 S1000 300 1460 200" fill="none" stroke="#B8854A" strokeWidth="3" strokeDasharray="1800" strokeDashoffset="1800" />
           <g id="gbike"><circle id="gglow" r="16" fill="#B8854A" opacity=".25" /><circle r="7" fill="#B8854A" /><path d="M-6 -3 L9 0 L-6 3Z" fill="#101316" /></g>
           <path d="M-20 860 C300 800 380 600 700 640 S1000 340 1460 240" fill="none" stroke="#EDE7DB22" strokeWidth="2" />
+          </g>
           <g transform="translate(1000 450)">
             <circle r="230" fill="none" stroke="#EDE7DB22" strokeWidth="2" />
             <circle r="170" fill="none" stroke="#EDE7DB11" strokeWidth="30" strokeDasharray="3 14" />

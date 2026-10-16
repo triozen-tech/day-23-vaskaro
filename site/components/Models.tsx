@@ -27,7 +27,9 @@ export default function Models() {
     P.querySelectorAll<HTMLElement>(".bars i").forEach((b, k) => {
       b.style.transition = "none";
       b.style.transform = "scaleY(0)";
-      requestAnimationFrame(() => requestAnimationFrame(() => { b.style.transition = `transform .8s ${k * 0.08}s cubic-bezier(.7,0,.2,1),background .6s`; b.style.transform = ""; }));
+      requestAnimationFrame(() => requestAnimationFrame(() => { b.style.transition = `transform .8s ${k * 0.08}s cubic-bezier(.7,0,.2,1),background .6s`; b.style.transform = "scaleY(1)"; }));
+      // the bars are only the switch transition: they lift away again once the model is in place
+      setTimeout(() => { if (s.cur !== i) return; b.style.transition = `transform .7s ${k * 0.06}s cubic-bezier(.7,0,.2,1),background .6s`; b.style.transform = "scaleY(0)"; }, 1500);
     });
     P.querySelectorAll<HTMLElement>(".mb").forEach((b, k) => b.classList.toggle("on", k === i));
     $("#mname").textContent = m.f;

@@ -16,13 +16,18 @@ const CSS = `/* LOADER · I-VK1 "Headlight" (custom, new): black screen, a bronz
 .vk-ld-dot { position: absolute; left: 96px; top: 450px; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #E9B677; box-shadow: 0 0 24px 8px rgba(184,133,74,.75), 0 0 80px 24px rgba(184,133,74,.35); animation: vkdot .2s ease-out both, vkdotp .32s ease-in-out .2s infinite alternate; }
 @keyframes vkdotp { from { box-shadow: 0 0 18px 5px rgba(184,133,74,.55), 0 0 60px 16px rgba(184,133,74,.2); } to { box-shadow: 0 0 30px 12px rgba(184,133,74,.9), 0 0 110px 34px rgba(184,133,74,.45); } }
 @keyframes vkdot { from { opacity: 0; transform: scale(.3); } to { opacity: 1; transform: none; } }
-.vk-ld-beam { position: absolute; inset: 0; filter: blur(22px); animation: vkbeamp .32s ease-in-out infinite alternate; }
-@keyframes vkbeamp { from { opacity: .62; } to { opacity: 1; } }
-.vk-ld-beam i { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(184,133,74,.6), rgba(184,133,74,0));
-  clip-path: polygon(96px 50%, calc(96px + var(--p) * 1100px) 18%, calc(96px + var(--p) * 1100px) 82%); }
-.vk-ld-word { position: absolute; inset: 0; display: grid; place-items: center; font: 400 64px 'Gilda Display'; color: #EDE7DB; letter-spacing: .34em; padding-left: .34em; text-shadow: 0 0 26px rgba(184,133,74,.55);
-  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--p) * 1100px - 20px), transparent calc(var(--p) * 1100px + 110px)); mask-image: linear-gradient(90deg, #000 calc(var(--p) * 1100px - 20px), transparent calc(var(--p) * 1100px + 110px)); }
-.vk-ld-word span { display: block; padding-left: .34em; }`;
+.vk-ld-beam { position: absolute; inset: 0; filter: blur(14px); animation: vkbeamp .32s ease-in-out infinite alternate;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--p) * 2000px - 380px), transparent calc(var(--p) * 2000px + 100px)); mask-image: linear-gradient(90deg, #000 calc(var(--p) * 2000px - 380px), transparent calc(var(--p) * 2000px + 100px)); }
+@keyframes vkbeamp { from { opacity: .7; } to { opacity: 1; } }
+/* the beam is a soft cone of light from the dot: feathered on both sides (triangle profile), running on past the right edge, so no end or edge ever shows */
+.vk-ld-beam i { position: absolute; inset: 0; background: conic-gradient(from 76deg at 96px 50%, transparent 0deg, rgba(184,133,74,.2) 6deg, rgba(212,160,98,.6) 14deg, rgba(184,133,74,.2) 22deg, transparent 28deg, transparent 360deg); }
+.vk-ld-word { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; font: 400 64px 'Gilda Display'; color: #EDE7DB; letter-spacing: .34em; padding-left: .34em; text-shadow: 0 0 26px rgba(184,133,74,.55); }
+/* one value (--p) drives it: each letter lights as the beam's front (96 + p*2000 px) reaches its x */
+.vk-ld-word b { font-weight: 400; opacity: clamp(0, calc((var(--p) * 2000 + 96 - var(--x)) / 140), 1); }
+`;
+
+/** x (px, 1440 wide) of each letter of VASKARO, measured in the loader */
+const LETTER_X = [540, 608, 667, 727, 791, 855, 922];
 
 /** Tells the hero (and anything else) the loader is opening: the hook types in, the arc draws. */
 export const OPEN_EVENT = "vk:open";
@@ -92,7 +97,7 @@ export default function Loader() {
     <div ref={root} data-loader className="vk-ld" aria-hidden>
       <style>{CSS}</style>
       <div className="vk-ld-beam"><i /></div>
-      <div className="vk-ld-word"><span>VASKARO</span></div>
+      <div className="vk-ld-word">{[..."VASKARO"].map((c, i) => <b key={i} style={{ "--x": LETTER_X[i] } as React.CSSProperties}>{c}</b>)}</div>
       <div className="vk-ld-dot" />
     </div>
   );

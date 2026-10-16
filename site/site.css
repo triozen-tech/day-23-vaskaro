@@ -6,7 +6,7 @@ html { overflow-x: clip; }
 .eyebrow { font: 700 14px/1 'Chivo Variable', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #B8854A; }
 
 /* NAV */
-.vk-nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; border-bottom: 1px solid rgba(237,231,219,.16); backdrop-filter: blur(6px); background: linear-gradient(#101316cc, #10131600); transition: color .3s, background .3s, border-color .3s; }
+.vk-nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; border-bottom: 1px solid rgba(237,231,219,.16); backdrop-filter: blur(6px); background: linear-gradient(#101316f2 0, #101316cc 60%, #10131600); backdrop-filter: blur(8px); transition: color .3s, background .3s, border-color .3s; }
 .vk-nav b { font: 400 22px 'Gilda Display'; letter-spacing: .3em; }
 .vk-nav .mid { font-size: 14px; letter-spacing: .12em; color: #EDE7DBaa; max-width: 200px; line-height: 1.4; transition: color .3s; }
 .vk-nav .r { display: flex; gap: 34px; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; align-items: center; }
@@ -36,7 +36,7 @@ html { overflow-x: clip; }
 .vk-models { background: radial-gradient(ellipse at 50% 40%, #232b36, #0f1318 70%); }
 .vk-models .big { position: absolute; left: 150px; top: 130px; font: 900 380px/1 'Chivo Variable'; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 2px #EDE7DB44; white-space: nowrap; transition: transform .7s cubic-bezier(.7,0,.2,1), opacity .5s; }
 .vk-models .bars { position: absolute; left: 560px; top: 0; display: flex; gap: 18px; }
-.vk-models .bars i { display: block; width: 46px; background: var(--c); transform-origin: top; transition: transform .8s cubic-bezier(.7,0,.2,1), background .6s; }
+.vk-models .bars i { display: block; width: 46px; background: var(--c); transform-origin: top; transform: scaleY(0); transition: transform .8s cubic-bezier(.7,0,.2,1), background .6s; }
 .vk-models .bars .bar2 { width: 78px; }
 .vk-models .ring { position: absolute; left: 230px; top: 430px; width: 1000px; height: 280px; border: 2px solid var(--c); border-radius: 50%; transition: border-color .6s; transform: rotate(-4deg); }
 .vk-models .ring b { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--c); box-shadow: 0 0 14px var(--c); left: 0; top: 0; }
@@ -96,7 +96,7 @@ html { overflow-x: clip; }
 .rc { width: 440px; height: 520px; background: #161a1e; border: 1px solid rgba(237,231,219,.16); position: relative; flex: none; overflow: hidden; }
 .rc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .rc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(#0000 40%, #101316dd); }
-.rc svg { position: absolute; inset: 0; z-index: 1; }
+.rc svg { position: absolute; inset: 0; z-index: 1; -webkit-mask-image: linear-gradient(#000 0, #000 68%, transparent 78%); mask-image: linear-gradient(#000 0, #000 68%, transparent 78%); }
 .rc .t { position: absolute; left: 24px; bottom: 26px; z-index: 2; }
 .rc .t h3 { font: 400 36px 'Gilda Display'; }
 .rc .t p { font-size: 14px; letter-spacing: .14em; color: #B8854A; text-transform: uppercase; margin-top: 6px; }
@@ -110,8 +110,8 @@ html { overflow-x: clip; }
 .vk-book .row { display: flex; gap: 10px; margin: 14px 0; }
 .slot { flex: 1; border: 1px solid rgba(237,231,219,.16); padding: 14px 0; text-align: center; font-size: 14px; letter-spacing: .1em; transition: .3s; cursor: pointer; background: none; color: inherit; }
 .slot.on { background: #B8854A; color: #101316; border-color: #B8854A; }
-.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; opacity: .72; transition: .4s; }
-.step.on { opacity: 1; }
+.step { display: flex; align-items: center; gap: 12px; margin: 12px 0; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; opacity: 1; color: #EDE7DBe6; transition: .4s; }
+.step.on { color: #EDE7DB; }
 .step i { width: 20px; height: 20px; border: 1.5px solid #B8854A; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 14px; color: #101316; transition: .3s; }
 .step.on i { background: #B8854A; }
 .vk-book .btn { display: inline-block; margin-top: 20px; background: #EDE7DB; color: #101316; padding: 16px 32px; font: 700 14px 'Chivo Variable'; letter-spacing: .22em; border: 0; transition: .3s; }
