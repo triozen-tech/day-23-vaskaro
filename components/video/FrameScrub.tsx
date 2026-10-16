@@ -269,12 +269,14 @@ function TimelineScrub({ segs, clipOrder, stillAt = 0.1, onProgress, lead = 0, h
     };
 
     const paint = (x: number) => {
-      ctx.clearRect(0, 0, cv.width, cv.height);
+      // clear lazily: if no layer has a frame yet (a clip just restarted) the last picture stays instead of a blank canvas
+      let cleared = false;
+      const draw = (im: HTMLImageElement, al: number) => { if (!cleared) { ctx.clearRect(0, 0, cv.width, cv.height); cleared = true; } drawImg(im, al); };
       let dominant: [string, number] | null = null;
       const info: [string, number, number][] = [];
       for (const L of layersAt(segs, tl!, x)) {
         const sg = segs[L.i];
-        if ("img" in sg) { const im = getStill(sg.img); if (im) drawImg(im, L.alpha); continue; }
+        if ("img" in sg) { const im = getStill(sg.img); if (im) draw(im, L.alpha); continue; }
         ensureClip(sg.clip); // a clip dropped while far away restarts the moment any of it is on screen (jump back from the end)
         const n = counts[L.i];
         let f = L.t * (n - 1);
@@ -283,9 +285,9 @@ function TimelineScrub({ segs, clipOrder, stillAt = 0.1, onProgress, lead = 0, h
         info.push([sg.clip, +f.toFixed(3), +L.alpha.toFixed(3)]);
         const f0 = Math.floor(f), m = f - f0;
         const a = clipFrame(sg.clip, f0);
-        if (a) drawImg(a, L.alpha);
+        if (a) draw(a, L.alpha);
         const b = m > 0.02 && f0 + 1 < n ? clipFrame(sg.clip, f0 + 1) : undefined;
-        if (b && b !== a) drawImg(b, L.alpha * m);
+        if (b && b !== a) draw(b, L.alpha * m);
         dominant = [sg.clip, L.t];
       }
       ctx.globalAlpha = 1;

@@ -132,3 +132,8 @@ Focus rings: bronze 3px outline on every link, button, road and gear card. Hover
 ## Prompts (as run)
 
 Left empty for the user to paste into. Format: asset ID · date · prompt (word for word) · attachments.
+
+### Round 5 fixes (loader gate, memory, cover)
+- Loader lifts when the first hero frame is decoded, the two hero fonts are loaded and the 0.75 s sweep has played; the other 107 frames of clip 1 stream in behind the hero. Loader CSS is inline in `Loader.tsx`; first frame and fonts are preloaded in the head (`Page.tsx`).
+- Frames: current and next clip only; the previous one is released past 30%. The canvas keeps the last picture if a clip has no frame yet.
+- Cover: `recordings/day-23-cover.jpg`, keyword MOTO, Passo cut-out as the product.

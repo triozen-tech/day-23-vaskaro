@@ -137,23 +137,7 @@ html { overflow-x: clip; }
 .vk-roads .rbar i { position: absolute; left: 0; top: 0; height: 2px; background: #B8854A; width: 0; }
 .vk-roads .rfoot #rname { min-width: 300px; text-align: right; color: #B8854A; }
 
-/* LOADER · I-VK1 "Headlight" (custom, new): black screen, a bronze dot lights at the left, a soft beam sweeps the wordmark (letters show only where it has touched),
-   then the beam widens into a hole that floods the screen. --p (sweep, CSS from first paint) and --w (flood, set by Loader.tsx) are the only two values. */
-@property --p { syntax: '<number>'; inherits: true; initial-value: 0; }
-@property --w { syntax: '<number>'; inherits: true; initial-value: 0; }
-.vk-ld { position: fixed; inset: 0; z-index: 300; background: #000; overflow: hidden; animation: vkp .66s cubic-bezier(.4,0,.35,1) .1s forwards;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--w) * 1300px - 300px), #000 calc(var(--w) * 1300px)); mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--w) * 1300px - 300px), #000 calc(var(--w) * 1300px)); }
-@keyframes vkp { to { --p: 1; } }
-.vk-ld-dot { position: absolute; left: 96px; top: 450px; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #E9B677; box-shadow: 0 0 24px 8px rgba(184,133,74,.75), 0 0 80px 24px rgba(184,133,74,.35); animation: vkdot .2s ease-out both, vkdotp .32s ease-in-out .2s infinite alternate; }
-@keyframes vkdotp { from { box-shadow: 0 0 18px 5px rgba(184,133,74,.55), 0 0 60px 16px rgba(184,133,74,.2); } to { box-shadow: 0 0 30px 12px rgba(184,133,74,.9), 0 0 110px 34px rgba(184,133,74,.45); } }
-@keyframes vkdot { from { opacity: 0; transform: scale(.3); } to { opacity: 1; transform: none; } }
-.vk-ld-beam { position: absolute; inset: 0; filter: blur(22px); animation: vkbeamp .32s ease-in-out infinite alternate; }
-@keyframes vkbeamp { from { opacity: .62; } to { opacity: 1; } }
-.vk-ld-beam i { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(184,133,74,.6), rgba(184,133,74,0));
-  clip-path: polygon(96px 50%, calc(96px + var(--p) * 1100px) 18%, calc(96px + var(--p) * 1100px) 82%); }
-.vk-ld-word { position: absolute; inset: 0; display: grid; place-items: center; font: 400 64px 'Gilda Display'; color: #EDE7DB; letter-spacing: .34em; padding-left: .34em; text-shadow: 0 0 26px rgba(184,133,74,.55);
-  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--p) * 1100px - 20px), transparent calc(var(--p) * 1100px + 110px)); mask-image: linear-gradient(90deg, #000 calc(var(--p) * 1100px - 20px), transparent calc(var(--p) * 1100px + 110px)); }
-.vk-ld-word span { display: block; padding-left: .34em; }
+/* LOADER · I-VK1 Headlight: its CSS is inline in components/Loader.tsx so the sweep starts at first paint, before this file arrives. */
 
 /* HERO hook line (typed in when the loader opens) */
 .hook { position: absolute; left: 140px; top: 352px; text-shadow: 0 2px 16px #000c; font: italic 400 26px 'Gilda Display'; color: #EDE7DB; letter-spacing: .01em; white-space: nowrap; }

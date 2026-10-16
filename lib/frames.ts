@@ -161,7 +161,7 @@ export function viewClip(folder: string, frac: number) {
   if (at < 0) return;
   clipOrder.forEach((o, k) => {
     const s = store.get(o);
-    if (s && Math.abs(k - at) > 1 && s.started) { s.gen++; s.imgs = []; s.loaded = 0; s.started = false; s.man = undefined; }
+    if (s && s.started && (k > at + 1 || k < at - 1 || (k === at - 1 && frac > 0.3))) { s.gen++; s.imgs = []; s.loaded = 0; s.started = false; s.man = undefined; }
   });
   if (frac > 0.5 && at < clipOrder.length - 1) ensureClip(clipOrder[at + 1]);
 }
