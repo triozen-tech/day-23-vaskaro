@@ -1,15 +1,19 @@
 "use client";
 import { useRef } from "react";
 import { IMG, ROADS } from "../content";
-import { clamp, prog, useFrame } from "./kit";
+import { RIDGE, clamp, entry, prog, sm, useFrame } from "./kit";
 
-/** Roads: a pinned horizontal rail; each route line draws as its card enters. */
+/** Roads: arrives over a ridge-line edge (X3), then a pinned horizontal rail; each route line draws as its card enters. */
 export default function Roads() {
   const track = useRef<HTMLElement>(null);
   const root = useRef<HTMLDivElement>(null);
   useFrame(root, (_t, still) => {
     const r = root.current!;
     const p = still ? 1 : prog(track.current!);
+    // X3 edge shape morph: the paper's edge is a mountain ridge that flattens as the rail arrives
+    const e = still ? 1 : sm(entry(track.current!), 0, 0.85);
+    const A = (1 - e) * 300;
+    r.style.clipPath = e >= 1 ? "" : `polygon(${RIDGE.map((h, i) => `${(i * 100) / 24}% ${(h * A).toFixed(1)}px`).join(",")},100% 100%,0 100%)`;
     const W = 5 * 480 + 80 - 1440 + 120;
     (r.querySelector(".rail") as HTMLElement).style.transform = `translateX(${-W * p}px)`;
     (r.querySelector("#rprog") as HTMLElement).style.width = `${(still ? 1 : p) * 100}%`;

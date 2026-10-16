@@ -34,6 +34,7 @@ export default function Models() {
     $("#mtxt").textContent = m.t;
     $("#mprice").firstChild!.textContent = m.p + " ";
     $("#mtag").innerHTML = `${m.g[0]}<br>${m.g[1]}`;
+    [P.querySelector(".sm"), P.querySelector(".tagline")].forEach((el) => { if (!el) return; el.classList.remove("swap"); void (el as HTMLElement).offsetWidth; el.classList.add("swap"); });
     P.querySelectorAll("#mchips button").forEach((c, k) => c.classList.toggle("on", k === i));
   };
   const goModel = (i: number) => {

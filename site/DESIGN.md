@@ -76,3 +76,17 @@ Empty. When the user pastes back the prompts that were run: asset ID · date · 
 | Gate | GL | M30 dial | one gear per step, bike marker moves along the road line |
 | Models | — | M27 pin, scroll picks model | pin and release |
 | Roads | — | M11 horizontal rail | rail on a pin, counter 01–05 |
+
+## Round 3 motion map (transitions + sections, as built)
+| Boundary / section | Code | How it plays |
+|---|---|---|
+| Models | M27 scrub + lock | scroll picks Passo / Cima / Vetta; 1 s lock; outline word, bars, bike swap, text re-enters |
+| Gate → Engine | X17 lock-on reticle | screen opens through a bronze frame with corner brackets |
+| Engine → Gear shop | X1 overlap slide | engine stays pinned and dims while the paper slides over it |
+| Gear shop → Roads | X3 edge shape morph | paper edge is a mountain ridge that flattens as the rail arrives |
+| Roads → Booking | X7 diagonal wipe | a slanted edge sweeps up and flattens |
+| Booking → Footer | X16 cut-and-stamp | bronze plate lands with a small jolt and shadow |
+| Engine | M8 lines + count-up + drift | callout lines draw, numbers count, bike drifts |
+| Gear shop / Roads | stagger rise / line draw | cards rise in a stagger; each road line draws as its card enters |
+| Booking | steps tick + live confirm | scroll ticks the 3 steps in order (until the visitor clicks); confirm pulses |
+| Footer | wordmark rise + idle stripes | letters rise; stripes and drift keep it alive |
